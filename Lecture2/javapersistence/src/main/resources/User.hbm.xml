@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<!--  
+    <class name="users.dao.dataobject.Event" table="events">
+        <id column="ID" name="eventId" type="java.lang.Integer"
+            unsaved-value="0">
+            <generator class="identity"/>
+        </id>
+        <property column="name" name="eventName" type="java.lang.String"/>
+        <property column="event_date" name="eventDate" type="timestamp"/>
+    </class>
+-->
+    <class name="users.dao.dataobject.User" table="users">
+        <id column="ID" name="id" type="java.lang.Integer" unsaved-value="0">
+            <generator class="identity"/>
+        </id>
+        <property column="name" name="name" type="java.lang.String"/>
+        <!--  
+        <set name="events" table="user_event" cascade="all" fetch="select">
+            <key column="user_id"/>
+            <many-to-many column="event_id" class="users.dao.dataobject.Event"/>
+        </set>
+        -->
+    </class>
+
+</hibernate-mapping>
