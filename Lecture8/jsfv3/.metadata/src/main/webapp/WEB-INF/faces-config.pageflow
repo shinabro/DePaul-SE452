@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf13509894549781" configfile="/jsf/src/main/webapp/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="healthplan.xhtml" x="122" y="178" id="pf135099056261611" referenceLink="//@navigationRule.2/@fromViewId|" path="healthplan.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="accepted.xhtml" x="122" y="562" id="pf135099056261614" referenceLink="//@navigationRule.2/@navigationCase.0/@toViewId|" path="accepted.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="rejected.xhtml" x="122" y="946" id="pf135099056261715" referenceLink="//@navigationRule.2/@navigationCase.1/@toViewId|" path="rejected.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="first.xhtml" x="122" y="1330" id="pf135099056261716" referenceLink="//@navigationRule.4/@navigationCase.0/@toViewId|" path="/first.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="second.xhtml" x="122" y="2098" id="pf135099056261719" referenceLink="//@navigationRule.4/@fromViewId|" path="/second.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="userlist.xhtml" x="338" y="1714" id="pf135099194464620" referenceLink="//@navigationRule.1/@navigationCase.0/@toViewId|" outlinks="pf135099194464621" inlinks="pf135103815999723" path="/userlist.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="add_user.xhtml" x="122" y="1714" id="pf135099194464622" referenceLink="//@navigationRule.1/@fromViewId|" outlinks="pf135103815999723" inlinks="pf135099194464621" path="/add_user.xhtml"/>
+  <links id="pf135099194464621" target="pf135099194464622" source="pf135099194464620" outcome="add"/>
+  <links id="pf135103815999723" target="pf135099194464620" source="pf135099194464622"/>
+</pageflow:Pageflow>

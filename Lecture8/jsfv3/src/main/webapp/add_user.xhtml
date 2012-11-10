@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"   
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:rich="http://richfaces.org/rich"
+      xmlns:t="http://myfaces.apache.org/tomahawk"
+      >
+    <h:head>
+    	<h:outputStylesheet library="css" name="table-style.css"  />
+    </h:head>
+ 
+    <h:body>
+	<h:form>
+    	<h1>New User: Using Tomahawk and RichFaces components</h1>
+		Name: <h:inputText value="#{user.name}" required="true" requiredMessage="Please enter the name"/><br/>
+        <br/>Birthday: <t:inputCalendar id="secondOne" monthYearRowClass="yearMonthHeader" weekRowClass="weekHeader" popupButtonStyleClass="standard_bold"
+                currentDayCellClass="currentDayCell" value="#{user.birthDay}" renderAsPopup="true"
+                popupTodayString="#{example_messages['popup_today_string']}"
+                popupDateFormat="MM/dd/yyyy" popupWeekString="#{example_messages['popup_week_string']}"
+                helpText="MM/DD/YYYY"
+                forceId="true"/>	
+	 	<br/>Age:  <rich:inputNumberSlider value="50"/>
+		<br/><br/><h:commandButton value="Add me" action="#{user.addUser}"/>
+        </h:form>
+    </h:body>
+ 
+</html>
