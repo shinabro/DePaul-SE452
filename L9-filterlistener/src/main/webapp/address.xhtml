@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"  
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+   <h:head>
+      <h:outputStylesheet library="css" name="styles.css"/>
+      <title>#{msgs.windowTitle}</title>
+   </h:head>
+
+   <h:body>
+      <h:form>
+         <span class="emphasis">#{msgs.pageTitle}</span>
+         <h:panelGrid columns="2">
+            #{msgs.streetAddressPrompt}
+            <h:inputText value="#{form.streetAddress}"/>
+
+            #{msgs.cityPrompt}
+            <h:inputText value="#{form.city}"/>
+
+            #{msgs.statePrompt}
+            <h:inputText value="#{form.state}"/>
+
+            #{msgs.countryPrompt} 
+            <h:selectOneMenu value="#{form.country}" onchange="submit()"
+                  valueChangeListener="#{form.countryChanged}">
+               <f:selectItems value="#{form.countries}" var="loc"
+                  itemLabel="#{loc.displayCountry}" itemValue="#{loc.country}"/>
+            </h:selectOneMenu>
+         </h:panelGrid>
+         <h:commandButton value="#{msgs.submit}"/>
+      </h:form>
+   </h:body>
+</html>

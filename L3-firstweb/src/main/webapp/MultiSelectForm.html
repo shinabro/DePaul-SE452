@@ -1,0 +1,60 @@
+<HTML>
+<HEAD>
+  <TITLE>Sample RadioButton Control</TITLE>
+</HEAD>
+<P>
+<form action="./EchoServlet" METHOD="GET">
+<table border=1 cellspacing=0 cellpadding=0 >
+<TR>
+	<TD>Payment method using Radio Button
+	<TD>
+		<INPUT TYPE="RADIO" NAME="radioMethod" VALUE="MC" CHECKED/> MC <P>
+		<INPUT TYPE="RADIO" NAME="radioMethod" VALUE="Visa"/> Visa <P>
+		<INPUT TYPE="RADIO" NAME="radioMethod" VALUE="Checkcard"/> Checkcard <P>
+		<INPUT TYPE="RADIO" NAME="radioMethod" VALUE="Other"/> Cash
+</TR>
+<TR>
+	<TD>Payment method using Check Box
+	<TD>
+		<INPUT TYPE="CHECKBOX" NAME="mc" VALUE="MC" CHECKED/> MC <P>
+		<INPUT TYPE="CHECKBOX" NAME="visa" VALUE="Visa"/> Visa <P>
+		<INPUT TYPE="CHECKBOX" NAME="checkcard" VALUE="Checkcard"/> Checkcard <P>
+		<INPUT TYPE="CHECKBOX" NAME="other" VALUE="Other"/> Cash
+</TR>
+<TR>
+	<TD>Payment method using Combo Box
+	<TD>
+	    <SELECT NAME="comboBoxMethod">
+    		<OPTION VALUE="MC"/> MC <P>
+    		<OPTION VALUE="Visa" SELECTED/> Visa <P>
+    		<OPTION VALUE="Checkcard"/> Checkcard <P>
+    		<OPTION VALUE="Other"/> Cash
+    	</SELECT>
+</TR>
+<TR>
+	<TD>Payment method using Default List Box
+	<TD>
+	    <SELECT NAME="singleListBoxMethod" SIZE=2>
+    		<OPTION VALUE="MC"/> MC <P>
+    		<OPTION VALUE="Visa"/> Visa <P>
+    		<OPTION VALUE="Checkcard" SELECTED/> Checkcard <P>
+    		<OPTION VALUE="Other"/> Cash
+    	</SELECT>
+</TR>
+<TR>
+	<TD>Payment method using List Box using multi select
+	<TD>
+	    <SELECT NAME="multiListBoxMethod" SIZE=4 MULTIPLE>
+    		<OPTION VALUE="MC" SELECTED/> MC <P>
+    		<OPTION VALUE="Visa"/> Visa <P>
+    		<OPTION VALUE="Checkcard"/> Checkcard <P>
+    		<OPTION VALUE="Other" SELECTED/> Cash
+    	</SELECT>
+</TR>
+<TR>
+	<TD><INPUT TYPE="SUBMIT" VALUE="Submit">
+	<TD><INPUT TYPE="RESET">
+</TR>
+</table>
+</form>
+</HTML>

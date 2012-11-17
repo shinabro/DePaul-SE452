@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+   <h:head>
+      <title>#{msgs.loginWindowTitle}</title>
+   </h:head>
+   
+   <h:body style="background: #fefeef">   
+      <h:form>
+         <h3>#{msgs.loginHeading}</h3>
+         <h:panelGrid columns="2">
+
+            #{msgs.namePrompt}
+            <h:panelGroup>
+	            <h:inputText value="#{user.name}" id="name"
+	                  validator="#{user.validateName}">
+	                  <!--  Server side notification
+	               <f:ajax event="keyup" render="nameError"/>
+	               -->
+	               <!--  client side notification -->
+				   <f:ajax event="keyup" render="echo"/>
+	            </h:inputText>
+	            
+	            <h:message id="nameError" for="name" style="color: red"/>
+            </h:panelGroup>
+            
+            #{msgs.passwordPrompt}
+            <h:inputSecret value="#{user.password}" id="password" size="8"/>
+              
+            <h:commandButton value="#{msgs.loginButtonText}"
+               action="welcome"/>            
+         </h:panelGrid>
+		 
+         <p><h:outputText id="echo" value="#{user.name}"/></p>
+
+		</h:form>
+   </h:body>
+</html>
