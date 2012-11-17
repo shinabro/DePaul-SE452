@@ -1,4 +1,5 @@
 From command line
+git clone -s https://github.com/shinabro/DePaul-SE452
 git commit --> commit the changes to local
 git push --> upload the change to the server
 
