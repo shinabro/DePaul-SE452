@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<faces-config version="2.0">
+	<resource-bundle>
+		<base-name>messages</base-name>
+		<var>msgs</var>
+	</resource-bundle>
+	<navigation-rule>
+		<from-view-id>/userlist.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>add</from-outcome>
+			<to-view-id>/add_user.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<from-view-id>/add_user.xhtml</from-view-id>
+		<navigation-case>
+			<to-view-id>/userlist.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<lifecycle>
+ 		<phase-listener>edu.depaul.cdm.se.controller.PhaseChecker</phase-listener>
+	</lifecycle>
+</faces-config>
