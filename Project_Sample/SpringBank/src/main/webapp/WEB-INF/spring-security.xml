@@ -1,0 +1,31 @@
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+	xmlns:beans="http://www.springframework.org/schema/beans" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+	http://www.springframework.org/schema/security
+	http://www.springframework.org/schema/security/spring-security-3.1.xsd">
+ 
+	<http auto-config="true">
+		<intercept-url pattern="/user_home/**" access="ROLE_USER" />
+		<intercept-url pattern="/login/loginSuccess*" access="ROLE_USER" />
+		<form-login login-page="/login/login.htm" default-target-url="/login/loginSuccess.htm"
+			authentication-failure-url="/login/loginFailed.htm" />
+		<logout logout-success-url="/login/logout.htm" />
+	</http>
+ 
+	<authentication-manager>
+	  <authentication-provider>
+	   <jdbc-user-service data-source-ref="dataSource"
+ 
+			users-by-username-query="
+		   		select ahl.User_Name, ahl.Password, ahl.Enabled from Account_Holder_Login ahl where ahl.User_Name=?"
+	   
+	   		authorities-by-username-query="
+		      select ahl.User_Name, ahl.Authority from Account_Holder_Login ahl where ahl.User_Name=?" 
+ 
+		/>
+	  </authentication-provider>
+	</authentication-manager>
+ 
+</beans:beans>

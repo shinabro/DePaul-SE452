@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <!-- Begin Class Mapping -->
+  <class name="edu.depaul.cdm.bank.form.AccountHolderLogin" table="Account_Holder_Login">
+    <id column="User_ID" name="userId" type="integer">
+      <generator class="foreign">
+        <param name="property">accountHolder</param>
+      </generator>
+    </id>
+    <one-to-one class="edu.depaul.cdm.bank.form.AccountHolder" constrained="true" name="accountHolder"/>
+    <property column="User_Name" length="50" name="userName" not-null="true" type="string" unique="true"/>
+    <property column="Password" length="50" name="password" not-null="true" type="string"/>
+    <property column="Enabled" name="enabled" not-null="true" type="integer"/>
+    <property column="Authority" length="50" name="authority" not-null="true" type="string"/>
+  </class>
+  <!-- Begin Queries -->
+  <query name="get.accountHolderLogin.by.userName">
+			from AccountHolderLogin ahl where ahl.userName= :userName
+		</query>
+</hibernate-mapping>

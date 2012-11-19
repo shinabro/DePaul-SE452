@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="edu.depaul.cdm.bank.form.OtherBankAccount" table="Other_Bank_Account">
+    <composite-id class="edu.depaul.cdm.bank.form.OtherBankAccountPK" mapped="true">
+      <key-property column="Bank_Routing_Number" length="9" name="bankRoutingNumber" type="string"/>
+      <key-property column="Account_Number" length="15" name="accountNumber" type="string"/>
+      <key-many-to-one class="edu.depaul.cdm.bank.form.AccountHolder" column="User_ID" name="accountHolder"/>
+    </composite-id>
+    <property column="Bank_Name" length="50" name="bankName" not-null="true" type="string"/>
+    <property column="Bank_Address" length="100" name="bankAddress" not-null="true" type="string"/>
+  </class>
+</hibernate-mapping>
