@@ -36,7 +36,6 @@
 		</table>
 	</form:form>
 	<br>
-	<a href="/Banking_Group3/index.jsp">Return Home</a>
-
+	<a href="${pageContext.request.contextPath}/index.jsp">Return Home</a>
 </body>
 </html>

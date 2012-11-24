@@ -18,7 +18,7 @@
 		<c:forEach items="${accountsList}" var="account">
 			<tr>
 				<td>
-				<form action="/Banking_Group3/user_home/viewAccount.htm" method="post">
+				<form action="${pageContext.request.contextPath}/user_home/viewAccount.htm" method="post">
 					<input type="hidden" name="accountId" value="${account.accountId}">
 					Account: ${account.accountId}
 					<input type="submit" value="View">
@@ -37,10 +37,10 @@
 			<td><b>Account Holder Options</b></td>
 		</tr>
 		<tr>
-			<td><a href="/Banking_Group3/account_holder/addOtherBankAccount.htm">Link Account From Another Bank</a></td>
+			<td><a href="${pageContext.request.contextPath}/account_holder/addOtherBankAccount.htm">Link Account From Another Bank</a></td>
 		</tr>
 		<tr>
-			<td><a href="/Banking_Group3/account_holder/editPersonalInformation.htm">Edit Personal Information</a></td>
+			<td><a href="${pageContext.request.contextPath}/account_holder/editPersonalInformation.htm">Edit Personal Information</a></td>
 		</tr>
 		<tr>
 			<td><a href="<c:url value="/j_spring_security_logout" />" > Logout</a></td>
