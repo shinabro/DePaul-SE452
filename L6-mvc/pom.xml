@@ -12,6 +12,5 @@
     <packaging>war</packaging>
     <name>SE452 :: Example :: MVC</name>
     <description>MVC sample</description>
-    <groupId>edu.depaul.cdm.se</groupId>
     <version>1.0.0</version>
 </project>

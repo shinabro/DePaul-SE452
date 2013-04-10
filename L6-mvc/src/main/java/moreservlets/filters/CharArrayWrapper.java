@@ -1,8 +1,10 @@
 package moreservlets.filters;
 
-import java.io.*;
-import javax.servlet.*;
-import javax.servlet.http.*;
+import java.io.CharArrayWriter;
+import java.io.PrintWriter;
+
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpServletResponseWrapper;
 
 
 /** A response wrapper that takes everything the client

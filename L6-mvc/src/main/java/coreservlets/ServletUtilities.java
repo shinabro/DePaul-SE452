@@ -1,7 +1,7 @@
 package coreservlets;
 
-import javax.servlet.*;
-import javax.servlet.http.*;
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
 
 /** Some simple time savers. Note that most are static methods.
  *  <P>
