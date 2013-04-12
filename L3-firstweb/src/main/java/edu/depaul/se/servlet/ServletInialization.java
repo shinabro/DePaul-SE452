@@ -43,13 +43,15 @@ public class ServletInialization implements ServletContextListener {
         try {
 	    	Context initContext = new InitialContext();
 	    	Context envContext  = (Context)initContext.lookup("java:/comp/env");
-	    	DataSource ds = (DataSource)envContext.lookup("jdbc/TestDBCP");
+	    	DataSource ds = (DataSource)envContext.lookup("jdbc/TestDB");
 
+        	System.out.println("Before regular table creation");
+        	createUserTable(DriverManager.getConnection("jdbc:hsqldb:mem:.", "", ""));
+        	System.out.println("After regular table creation");
+        	
 	    	System.out.println("Before jdbcDriver");
         	createUserTable(ds.getConnection());
         	System.out.println("After datasource table creation");
-        	createUserTable(DriverManager.getConnection("jdbc:hsqldb:mem:.", "", ""));
-        	System.out.println("After regular table creation");
         } catch (SQLException | NamingException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
