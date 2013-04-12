@@ -1,1 +1,9 @@
+# Compiled source #
+###################
+*.class
 target/
+
+# IDE specific #
+.settings/
+.classpath
+.project
