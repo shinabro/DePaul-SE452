@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Context antiJARLocking="true" path="/first">
+<Context antiJARLocking="true" path="/firstweb">
 	<!-- Data source example -->
 	<!-- See http://tomcat.apache.org/tomcat-7.0-doc/jndi-datasource-examples-howto.html -->
 	<Resource name="jdbc/TestDB" auth="Container" 
