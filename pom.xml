@@ -54,14 +54,23 @@
 				<artifactId>tomcat7-maven-plugin</artifactId>
 				<version>2.1</version>
 				<configuration>
-					<!-- optional only if you want to use a preconfigured server.xml file -->
-					<!-- <serverXml>src/main/tomcatconf/server.xml</serverXml> -->
-					<!-- naming is disabled by default so use true to enable it -->
+					<!-- Needed because we are using jdbc definitions -->
 					<contextFile>src/main/webapp/META-INF/context.xml</contextFile>
+
+                    <!--  					
+					 Needed if you want to deploy/undeploy to Tomcat 
+                     be sure to configure tomcat-users.xml
+                     to include  
+                             <role rolename="manager-gui"/>
+                             <role rolename="manager-script"/>
+                             <user username="admin" password="password" roles="manager-gui, manager-script"/>
+                    -->
+					<url>http://localhost:8080/manager/text</url>
+					<username>admin</username>
+					<password>password</password>
 					<!-- extra dependencies to add jdbc driver, mail jars, etc. -->
 				</configuration>
 			</plugin>
-
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
