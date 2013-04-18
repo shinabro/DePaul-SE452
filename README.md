@@ -1,12 +1,11 @@
-From command line
-*** git clone -s https://github.com/shinabro/DePaul-SE452
-*** git commit --> commit the changes to local
-*** git push --> upload the change to the server
-
 Tools used
-*** Maven - Using maven 3
+
+*** Maven 3 (Be sure to run mvn install -Dmaven.test.skip=true from top level directory)
+
 *** Tomcat 7
+
 *** JDK 7 (if using 6, need to update main pom.xml and there are couple of exception handling technique needing retrofit)
+
 
 For Windows
 https://help.github.com/articles/set-up-git
