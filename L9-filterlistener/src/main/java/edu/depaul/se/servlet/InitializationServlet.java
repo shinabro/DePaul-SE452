@@ -48,7 +48,7 @@ public class InitializationServlet implements ServletContextListener {
         	createUserTable(ds.getConnection());
         	//createUserTable(DriverManager.getConnection("jdbc:hsqldb:mem:.", "", ""));
 
-        } catch (NamingException | SQLException e) {
+        } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         } 
