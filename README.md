@@ -13,8 +13,16 @@ https://help.github.com/articles/set-up-git
 Eclipse eGit plugin help
 http://wiki.eclipse.org/EGit/Learning_Material
 
-Eclipse setup
+Eclipse setup for web project
+
 1) Import project using maven project
+
+2) Convert the project facet (be sure to click Dynamic Web Module)
+![alt text](/project-facet.jpg "Project Facet")
+
+3) Change content location to (/src/main/webapp)
+
+4) Include runtime to include maven path 
 ![alt text](/eclipse-setup.jpg "Eclipse Setup")
 
 
