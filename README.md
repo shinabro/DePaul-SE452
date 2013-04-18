@@ -13,3 +13,9 @@ https://help.github.com/articles/set-up-git
 Eclipse eGit plugin help
 http://wiki.eclipse.org/EGit/Learning_Material
 
+Eclipse setup
+1) Import project using maven project
+![alt text](/eclipse-setup.jpg "Eclipse Setup")
+
+
+
