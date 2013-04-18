@@ -41,7 +41,7 @@ public class UserServlet5 extends HttpServlet {
         	Context envContext  = (Context)initContext.lookup("java:/comp/env");
         	DataSource ds = (DataSource)envContext.lookup("jdbc/TestDBCP");
             con = ds.getConnection();
-        } catch (SQLException | NamingException ex) {
+        } catch (Exception ex) {
             Logger.getLogger(UserServlet5.class.getName()).log(Level.SEVERE, null, ex);
         }     
     }

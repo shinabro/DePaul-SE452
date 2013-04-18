@@ -52,7 +52,7 @@ public class ServletInialization implements ServletContextListener {
 	    	System.out.println("Before jdbcDriver");
         	createUserTable(ds.getConnection());
         	System.out.println("After datasource table creation");
-        } catch (SQLException | NamingException e) {
+        } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         } 
