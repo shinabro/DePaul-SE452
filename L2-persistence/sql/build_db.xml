@@ -7,7 +7,7 @@
     <property name="db.pw" value=""/>
 
     <path id="master-classpath">
-        <fileset dir="../lib/">
+        <fileset dir="lib/">
             <include name="*.jar"/>
         </fileset>
     </path>
