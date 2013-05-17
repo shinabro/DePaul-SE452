@@ -1,3 +1,5 @@
+This is sample code associated with DePaul SE452 taught (http://www.cdm.depaul.edu/academics/pages/courseinfo.aspx?Subject=SE&CatalogNbr=452) by yours truely.
+
 Tools used
 
 *** Maven 3 (Be sure to run mvn install -Dmaven.test.skip=true from top level directory)
