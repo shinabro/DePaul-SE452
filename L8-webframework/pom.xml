@@ -13,7 +13,6 @@
     <packaging>war</packaging>
     <name>SE452 :: Example :: JSF Framework</name>
     <description>Framework sample</description>
-    <groupId>edu.depaul.cdm.se</groupId>
     <version>1.0.0</version>
 
     <properties>
