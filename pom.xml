@@ -1,43 +1,37 @@
-<!-- Licensed to the Apache Software Foundation (ASF) under one or more contributor 
-	license agreements. See the NOTICE file distributed with this work for additional 
-	information regarding copyright ownership. The ASF licenses this file to 
-	you under the Apache License, Version 2.0 (the "License"); you may not use 
-	this file except in compliance with the License. You may obtain a copy of 
-	the License at http://www.apache.org/licenses/LICENSE-2.0 Unless required 
-	by applicable law or agreed to in writing, software distributed under the 
-	License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS 
-	OF ANY KIND, either express or implied. See the License for the specific 
-	language governing permissions and limitations under the License. -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
-	<modelVersion>4.0.0</modelVersion>
-	<groupId>edu.depaul.cdm.se</groupId>
-	<artifactId>examples</artifactId>
-	<packaging>pom</packaging>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>edu.depaul.cdm.se</groupId>
+    <artifactId>examples</artifactId>
+    <packaging>pom</packaging>
 
-	<version>1.0</version>
+    <version>1.0</version>
 
-	<name>SE452 Demo</name>
+    <name>SE452 Demo</name>
 
-	<modules>
-		<module>L1-intro</module>
-		<module>L2-persistence</module>
-		<module>L3-firstweb</module>
-		<module>L6-mvc</module>
-		<module>L7-session</module>
-		<module>L8-webframework</module>
-		<module>L9-filterlistener</module>
-	</modules>
+    <modules>
+        <module>L1-intro</module>
+        <module>L2-persistence</module>
+        <module>L3-firstweb</module>
+        <module>L6-mvc</module>
+        <module>L7-session</module>
+        <module>L8-webframework</module>
+        <module>L9-filterlistener</module>
+    </modules>
+    
+    <properties>
+        <springVersion>(3.1.2,)</springVersion>
+    </properties>
 
-	<dependencies>
+    <dependencies>
 
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>4.8.1</version>
-			<scope>test</scope>
-		</dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.8.1</version>
+            <scope>test</scope>
+        </dependency>
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
@@ -47,77 +41,77 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-test</artifactId>
-            <version>3.1.2.RELEASE</version>
+            <version>${springVersion}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-core</artifactId>
-            <version>3.1.2.RELEASE</version>
+            <version>${springVersion}</version>
             <scope>runtime</scope>
         </dependency>
-	</dependencies>
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.tomcat.maven</groupId>
-				<artifactId>tomcat7-maven-plugin</artifactId>
-				<version>2.1</version>
-				<configuration>
-					<!-- Needed because we are using jdbc definitions -->
-					<contextFile>src/main/webapp/META-INF/context.xml</contextFile>
+    </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.tomcat.maven</groupId>
+                <artifactId>tomcat7-maven-plugin</artifactId>
+                <version>2.1</version>
+                <configuration>
+                    <!-- Needed because we are using jdbc definitions -->
+                    <contextFile>src/main/webapp/META-INF/context.xml</contextFile>
 
                     <!--  					
-					 Needed if you want to deploy/undeploy to Tomcat 
+                                         Needed if you want to deploy/undeploy to Tomcat 
                      be sure to configure tomcat-users.xml
                      to include  
                              <role rolename="manager-gui"/>
                              <role rolename="manager-script"/>
                              <user username="admin" password="password" roles="manager-gui, manager-script"/>
                     -->
-					<url>http://localhost:8080/manager/text</url>
-					<username>admin</username>
-					<password>password</password>
-					<!-- extra dependencies to add jdbc driver, mail jars, etc. -->
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>2.3.2</version>
-				<configuration>
-					<source>1.7</source>
-					<target>1.7</target>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-war-plugin</artifactId>
-				<version>2.1.1</version>
-				<configuration>
-					<failOnMissingWebXml>false</failOnMissingWebXml>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-eclipse-plugin</artifactId>
-				<version>2.9</version>
-				<configuration>
-					<wtpapplicationxml>true</wtpapplicationxml>
-					<wtpversion>1.5</wtpversion>
-					<downloadSources>true</downloadSources>
-					<downloadJavadocs>true</downloadJavadocs>
-					<classpathContainers>
-						<classpathContainer>org.eclipse.jst.j2ee.internal.web.container</classpathContainer>
-						<classpathContainer>org.eclipse.jst.j2ee.internal.module.container</classpathContainer>
-					</classpathContainers>
-					<additionalProjectFacets>
-						<jst.web>2.5</jst.web>
-						<jst.jsf>1.2</jst.jsf>
-					</additionalProjectFacets>
-				</configuration>
-			</plugin>
+                    <url>http://localhost:8080/manager/text</url>
+                    <username>admin</username>
+                    <password>password</password>
+                    <!-- extra dependencies to add jdbc driver, mail jars, etc. -->
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>2.1.1</version>
+                <configuration>
+                    <failOnMissingWebXml>false</failOnMissingWebXml>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-eclipse-plugin</artifactId>
+                <version>2.9</version>
+                <configuration>
+                    <wtpapplicationxml>true</wtpapplicationxml>
+                    <wtpversion>1.5</wtpversion>
+                    <downloadSources>true</downloadSources>
+                    <downloadJavadocs>true</downloadJavadocs>
+                    <classpathContainers>
+                        <classpathContainer>org.eclipse.jst.j2ee.internal.web.container</classpathContainer>
+                        <classpathContainer>org.eclipse.jst.j2ee.internal.module.container</classpathContainer>
+                    </classpathContainers>
+                    <additionalProjectFacets>
+                        <jst.web>2.5</jst.web>
+                        <jst.jsf>1.2</jst.jsf>
+                    </additionalProjectFacets>
+                </configuration>
+            </plugin>
 
-		</plugins>
-	</build>
+        </plugins>
+    </build>
 </project>
