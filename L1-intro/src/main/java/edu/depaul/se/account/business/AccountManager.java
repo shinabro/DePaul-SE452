@@ -1,23 +1,20 @@
 package edu.depaul.se.account.business;
 
 import java.io.Serializable;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import edu.depaul.se.account.IAccount;
 
-public class Account implements Serializable {
+public class AccountManager implements Serializable {
 
-    private static final Logger logger = Logger.getLogger(Account.class.getName());
+    private static final Logger logger = Logger.getLogger(AccountManager.class.getName());
 
     /**
-     * 
      * @return all the accounts we know about
-     * @throws SQLException 
      */
-    public List<IAccount> getAccountList() throws SQLException {
+    public List<IAccount> getAccountList() {
         logger.info("Before getting connection");
         ArrayList<IAccount> list = new ArrayList<>();
         if (logger.isLoggable(Level.INFO)) {
