@@ -1,7 +1,7 @@
 package edu.depaul.se.jpa.basic.existingtables;
 
 import edu.depaul.se.jpa.basic.AbstractJPATest;
-import edu.depaul.se.jpa.basic.createdtables.Book;
+import edu.depaul.se.book.jpa.Book;
 import javax.persistence.*;
 import org.junit.Test;
 import static org.junit.Assert.*;

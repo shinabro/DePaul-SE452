@@ -1,5 +1,8 @@
 package edu.depaul.se.jpa.basic.createdtables;
 
+import edu.depaul.se.book.IBook;
+import edu.depaul.se.book.jpa.Book;
+import edu.depaul.se.book.jpa.BookService;
 import edu.depaul.se.jpa.basic.AbstractJPATest;
 import java.util.List;
 import java.util.Set;
@@ -74,7 +77,7 @@ public class BookTest extends AbstractJPATest {
         assertNotNull("ID should have been generated and populated after persist",
                 book.getId());
 
-        List<Book> books = service.getAllBooks();
+        List<IBook> books = service.getAllBooks();
         assertEquals(1, books.size());
     }
 

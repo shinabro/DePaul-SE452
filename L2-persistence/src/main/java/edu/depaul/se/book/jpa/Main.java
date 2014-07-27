@@ -1,4 +1,4 @@
-package edu.depaul.se.jpa.basic.createdtables;
+package edu.depaul.se.book.jpa;
 
 import java.util.List;
 import javax.persistence.EntityManager;
@@ -10,12 +10,12 @@ import javax.persistence.Persistence;
  * JPA using main
  * Be sure to start the database before starting this
  */
-public class BookMain {
+public class Main {
     private static EntityManagerFactory emf;
     private static EntityManager em;
     
     public static void main(String[] args) {
-        BookMain main = new BookMain();
+        Main main = new Main();
         emf = Persistence.createEntityManagerFactory("jpa-demoPU");
         em = emf.createEntityManager();
         main.createExample();

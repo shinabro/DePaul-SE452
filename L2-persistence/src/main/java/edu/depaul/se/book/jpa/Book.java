@@ -1,5 +1,6 @@
-package edu.depaul.se.jpa.basic.createdtables;
+package edu.depaul.se.book.jpa;
 
+import edu.depaul.se.book.IBook;
 import java.io.Serializable;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -11,7 +12,7 @@ import javax.validation.constraints.NotNull;
 @Entity
 //@Cache(type= CacheType.WEAK, expiry=60000)
 @NamedQuery(name="findAllBooks", query="select b from Book b")
-public class Book implements Serializable {
+public class Book implements Serializable, IBook {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -28,38 +29,47 @@ public class Book implements Serializable {
     
     private String isbn;
     
+    @Override
     public Integer getVersion() {
         return version;
     }
 
+    @Override
     public String getAuthor() {
         return author;
     }
 
+    @Override
     public void setAuthor(String author) {
         this.author = author;
     }
 
+    @Override
     public String getIsbn() {
         return isbn;
     }
 
+    @Override
     public void setIsbn(String isbn) {
         this.isbn = isbn;
     }
 
+    @Override
     public String getTitle() {
         return title;
     }
 
+    @Override
     public void setTitle(String title) {
         this.title = title;
     }
     
+    @Override
     public Long getId() {
         return id;
     }
 
+    @Override
     public void setId(Long id) {
         this.id = id;
     }

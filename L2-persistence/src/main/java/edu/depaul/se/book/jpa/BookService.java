@@ -1,5 +1,7 @@
-package edu.depaul.se.jpa.basic.createdtables;
+package edu.depaul.se.book.jpa;
 
+import edu.depaul.se.book.IBookService;
+import edu.depaul.se.book.IBook;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
@@ -8,7 +10,7 @@ import javax.persistence.Persistence;
 /**
  * Service layer around book persistence
  */
-public class BookService {
+public class BookService implements IBookService {
 
     private EntityManager em;
 
@@ -16,11 +18,12 @@ public class BookService {
         em = Persistence.createEntityManagerFactory("jpaPU").createEntityManager();
     }
 
-    public void saveBook(Book book) {
+    @Override
+    public void saveBook(IBook book) {
         EntityTransaction tx = em.getTransaction();
 
         tx.begin();
-        Book bookToUpdate;
+        IBook bookToUpdate;
         if ((book.getId() != null) && (book.getId() > 0)) {
             bookToUpdate = em.find(Book.class, book.getId());
             bookToUpdate.setTitle(book.getTitle());
@@ -34,10 +37,12 @@ public class BookService {
         tx.commit();
     }
 
-    public List<Book> getAllBooks() {
+    @Override
+    public List<IBook> getAllBooks() {
         return em.createNamedQuery("findAllBooks").getResultList();
     }
 
+    @Override
     public void deleteBook(int bookId) {
         EntityTransaction tx = em.getTransaction();
 
