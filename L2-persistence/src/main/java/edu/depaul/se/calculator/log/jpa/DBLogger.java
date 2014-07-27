@@ -11,7 +11,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
-@Table(name="SE554Log")
+@Table(name="DBLogs")
 public class DBLogger implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
