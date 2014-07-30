@@ -1,5 +1,6 @@
 package edu.depaul.se.account.persistence;
 
+import edu.depaul.se.account.business.AccountManager;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -82,6 +83,9 @@ public class AccountTest {
     public void countAccount() {
         Query q = entityManager.createQuery("select c from Account c");
         assertEquals(3, q.getResultList().size());
+        
+        AccountManager manager = new AccountManager();
+        assertEquals(3, manager.getAccountList().size());
     }
     
     private Account findAccount(long accountId) {

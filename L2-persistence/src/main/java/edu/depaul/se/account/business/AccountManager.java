@@ -6,9 +6,11 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import edu.depaul.se.account.IAccount;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityTransaction;
+import javax.persistence.Persistence;
 
 public class AccountManager implements Serializable {
-
     private static final Logger logger = Logger.getLogger(AccountManager.class.getName());
 
     /**
@@ -20,7 +22,7 @@ public class AccountManager implements Serializable {
         if (logger.isLoggable(Level.INFO)) {
             logger.log(Level.INFO, "Before returning: {0}", list.size());
         }
-
-        return list;
+        EntityManager em = Persistence.createEntityManagerFactory("accountPU").createEntityManager();
+        return em.createNamedQuery("findAllAccounts").getResultList();
     }
 }
