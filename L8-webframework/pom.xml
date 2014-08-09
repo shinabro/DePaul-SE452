@@ -31,12 +31,6 @@
             <artifactId>persistence</artifactId>
             <version>1.0.0</version>
         </dependency>
-        <!-- Needed for users.jsp to show JSTL comparison with JSF -->
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>jstl</artifactId>
-            <version>1.2</version>
-        </dependency>
 
         <!-- For Tomahawk -->
         <dependency>
