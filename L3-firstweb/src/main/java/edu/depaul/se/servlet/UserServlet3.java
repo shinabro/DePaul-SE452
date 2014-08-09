@@ -17,7 +17,7 @@ import users.dao.JDBCDAO;
 
 /**
  * Servlet implementation class UserServlet3
- * Similar to UserServlet2 except the parameters are on annoation rather than web.xml
+ * Similar to UserServlet2 except the parameters are on annotation rather than web.xml
  */
 @WebServlet(
 		urlPatterns = { "/UserServlet3" }, 

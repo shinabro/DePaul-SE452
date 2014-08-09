@@ -1,21 +1,21 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<parent>
-		<groupId>edu.depaul.cdm.se</groupId>
-		<artifactId>examples</artifactId>
-		<version>1.0</version>
-		<relativePath>..</relativePath>
-	</parent>
-	<artifactId>firstweb</artifactId>
-	<packaging>war</packaging>
-	<name>SE452 :: Example :: BasicWeb</name>
-	<description>First web sample</description>
-	<dependencies>
-		<dependency>
-			<groupId>edu.depaul.cdm.se</groupId>
-			<artifactId>persistence</artifactId>
-			<version>1.0.0</version>
-		</dependency>
-	</dependencies>
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>edu.depaul.cdm.se</groupId>
+        <artifactId>examples</artifactId>
+        <version>1.0</version>
+        <relativePath>..</relativePath>
+    </parent>
+    <artifactId>firstweb</artifactId>
+    <packaging>war</packaging>
+    <name>SE452 :: Example :: BasicWeb</name>
+    <description>Java Web Application parts and pieces example</description>
+    <dependencies>
+        <dependency>
+            <groupId>edu.depaul.cdm.se</groupId>
+            <artifactId>persistence</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+    </dependencies>
 </project>
