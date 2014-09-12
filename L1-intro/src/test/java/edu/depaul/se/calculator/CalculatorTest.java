@@ -1,13 +1,12 @@
 package edu.depaul.se.calculator;
 
-import edu.depaul.se.calculator.business.Calculator;
-import jdk.Exported;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
+
 import org.junit.BeforeClass;
 import org.junit.Test;
-import static org.junit.Assert.*;
+
+import edu.depaul.se.calculator.business.Calculator;
 
 public class CalculatorTest {
     
@@ -66,7 +65,7 @@ public class CalculatorTest {
         double lhs = 6.0;
         double rhs = 0.0;
         
-        double result = calculator.divide(lhs, rhs);
+        calculator.divide(lhs, rhs);
         fail("Should not have gotten here");
     }
 }

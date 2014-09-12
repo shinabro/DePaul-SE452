@@ -1,7 +1,12 @@
 package edu.depaul.se.calculator;
 
 public class DivideByZeroException extends Exception {
-    public DivideByZeroException() {
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	public DivideByZeroException() {
         super();
     }
     
