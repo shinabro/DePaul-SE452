@@ -7,11 +7,14 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import edu.depaul.se.account.IAccount;
 import javax.persistence.EntityManager;
-import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
 public class AccountManager implements Serializable {
-    private static final Logger logger = Logger.getLogger(AccountManager.class.getName());
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private static final Logger logger = Logger.getLogger(AccountManager.class.getName());
 
     /**
      * @return all the accounts we know about

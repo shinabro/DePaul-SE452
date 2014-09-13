@@ -4,7 +4,11 @@ import javax.persistence.Entity;
 
 @Entity
 public class C_SalaryEmployee extends C_Employee{
-    private int salary;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private int salary;
 
     public int getSalary() {
         return salary;
