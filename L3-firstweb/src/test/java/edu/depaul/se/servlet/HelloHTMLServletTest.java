@@ -1,6 +1,7 @@
 package edu.depaul.se.servlet;
 
-import junit.framework.Assert;
+import static org.junit.Assert.assertTrue;
+import org.junit.Before;
 
 import org.junit.Test;
 import org.springframework.mock.web.MockHttpServletRequest;
@@ -8,14 +9,22 @@ import org.springframework.mock.web.MockHttpServletResponse;
 
 public class HelloHTMLServletTest {
 
-	@Test
-	public void testHandleRequest() throws Exception {
-		MockHttpServletRequest request = new MockHttpServletRequest();
-		MockHttpServletResponse response = new MockHttpServletResponse();
-		HelloHTML servlet = new HelloHTML();
-		servlet.doGet(request, response);
-		
-		String expectResponse = "Hello Colorful World";
-		Assert.assertTrue("Message should contain " + expectResponse, response.getContentAsString().contains(expectResponse));
-	}
+    private MockHttpServletRequest request;
+    private MockHttpServletResponse response;
+    private HelloHTML servlet;
+
+    @Before
+    public void setUp() {
+        servlet = new HelloHTML();
+        request = new MockHttpServletRequest();
+        response = new MockHttpServletResponse();
+    }
+
+    @Test
+    public void testHandleRequest() throws Exception {
+        servlet.doGet(request, response);
+
+        String expectResponse = "Hello Colorful World";
+        assertTrue("Message should contain " + expectResponse, response.getContentAsString().contains(expectResponse));
+    }
 }

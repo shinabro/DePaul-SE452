@@ -4,7 +4,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
-import junit.framework.Assert;
+import static org.junit.Assert.assertTrue;
+import org.junit.Before;
 import org.junit.BeforeClass;
 
 import org.junit.Test;
@@ -41,15 +42,22 @@ public class UserServletTest {
         }
 
     }
+    private MockHttpServletRequest request = new MockHttpServletRequest();
+    private MockHttpServletResponse response = new MockHttpServletResponse();
+    private UserServlet servlet = new UserServlet();
+
+    @Before
+    public void setUp() {
+        servlet = new UserServlet();
+        request = new MockHttpServletRequest();
+        response = new MockHttpServletResponse();
+    }
 
     @Test
     public void testHandleRequest() throws Exception {
-        MockHttpServletRequest request = new MockHttpServletRequest();
-        MockHttpServletResponse response = new MockHttpServletResponse();
-        UserServlet servlet = new UserServlet();
         servlet.doGet(request, response);
 
         // Rudamentary test to see if the user is in the list
-        Assert.assertTrue(response.getContentAsString().contains("users.User"));
+        assertTrue(response.getContentAsString().contains("users.User"));
     }
 }
