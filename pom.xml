@@ -38,6 +38,14 @@
             <version>7.0</version>
             <scope>provided</scope>
         </dependency>
+        
+        <!-- Needed for Spring Mock test where just having JavaEE Web does not resolve everything -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.1.0</version>
+        </dependency>        
+        
         <!-- Needed for Tomcat to work given JSTL is not packaged with Tomcat -->
         <dependency>
             <groupId>javax.servlet</groupId>
