@@ -5,7 +5,11 @@ import javax.persistence.Embeddable;
 
 @Embeddable
 public class Address implements Serializable{
-    private String addressLine1;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private String addressLine1;
     private String addressLine2;
     private String city;
     private String state;

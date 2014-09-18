@@ -2,10 +2,7 @@ package edu.depaul.se.calculator.business;
 
 import edu.depaul.se.calculator.DivideByZeroException;
 import edu.depaul.se.calculator.ICalculator;
-import edu.depaul.se.calculator.log.jpa.DBLogger;
 import edu.depaul.se.calculator.log.jpa.Logger;
-import javax.persistence.EntityManager;
-import javax.persistence.Persistence;
 
 /**
  * Performs "business" logic

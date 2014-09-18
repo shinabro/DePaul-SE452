@@ -15,7 +15,11 @@ import javax.persistence.TemporalType;
 @Entity
 @Inheritance(strategy= InheritanceType.JOINED)
 public abstract class C_Employee implements Serializable{
-    @Id
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     private String name;
