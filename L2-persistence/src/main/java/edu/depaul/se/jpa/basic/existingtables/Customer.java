@@ -14,22 +14,23 @@ import javax.persistence.OrderBy;
 
 @Entity
 public class Customer implements Serializable {
+
     private static final long serialVersionUID = 1L;
     @Id
     @Column(name = "CUSTOMER_ID")
     private Integer customerId;
 
-    @OneToMany(cascade = CascadeType.ALL, 
-                mappedBy = "customerId", 
-                fetch= FetchType.EAGER)
+    @OneToMany(cascade = CascadeType.ALL,
+            mappedBy = "customerId",
+            fetch = FetchType.EAGER)
     private Collection<PurchaseOrder> purchaseOrderCollection;
 
     @Embedded
     private Address address;
 
-    @OneToMany(cascade = CascadeType.ALL, 
-                mappedBy = "customerId", 
-                fetch= FetchType.LAZY)
+    @OneToMany(cascade = CascadeType.ALL,
+            mappedBy = "customerId",
+            fetch = FetchType.LAZY)
     @OrderBy("salesDate DSC")
     private List<PurchaseOrder> purchaseOrderList;
 
@@ -48,9 +49,8 @@ public class Customer implements Serializable {
     public void setAddress(Address address) {
         this.address = address;
     }
-    
+
     private String name;
-    
 
     public Customer() {
     }
@@ -74,7 +74,6 @@ public class Customer implements Serializable {
     public void setName(String name) {
         this.name = name;
     }
-
 
     public Collection<PurchaseOrder> getPurchaseOrderCollection() {
         return purchaseOrderCollection;
@@ -115,5 +114,5 @@ public class Customer implements Serializable {
         sb.append(purchaseOrderCollection);
         return sb.toString();
     }
-    
+
 }

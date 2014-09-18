@@ -17,6 +17,8 @@ public class BookService implements IBookService {
 
     private static Logger log = Logger.getLogger(BookService.class.getName());
 
+    private static final String DB_DRIVER = "org.hsqldb.jdbc.JDBCDriver";
+    
     public BookService() {
     }
 
@@ -24,8 +26,8 @@ public class BookService implements IBookService {
     public void deleteBook(int bookId) {
         try {
             // Step 1:  Load database driver
-            Class.forName("org.apache.derby.jdbc.ClientDriver");
-            
+            Class.forName(DB_DRIVER);
+
             // Step 2:  Request a connection from the DriverManager
             Connection con = getConnection();
             con.setAutoCommit(false);
@@ -54,7 +56,7 @@ public class BookService implements IBookService {
         ArrayList<IBook> books = new ArrayList<>();
 
         try {
-            Class.forName("org.apache.derby.jdbc.ClientDriver");
+            Class.forName(DB_DRIVER);
 
             // Step 2:  Request a connection from the DriverManager
             Connection con = getConnection();
@@ -87,8 +89,8 @@ public class BookService implements IBookService {
     @Override
     public void saveBook(IBook book) {
         try {
-            Class.forName("org.apache.derby.jdbc.ClientDriver");
-            
+            Class.forName(DB_DRIVER);
+
             // Step 2:  Request a connection from the DriverManager
             Connection con = getConnection();
             con.setAutoCommit(false);
@@ -111,11 +113,11 @@ public class BookService implements IBookService {
             con.close();
 
             if (numOfAffectedRows != 1) {
-                log.log(Level.SEVERE, "Expected to have one row updated but there were none",book);
+                log.log(Level.SEVERE, "Expected to have one row updated but there were none", book);
             }
         } catch (SQLException | ClassNotFoundException ex) {
             log.log(Level.SEVERE, null, ex);
-        }    
+        }
     }
 
     private IBook map(ResultSet rs) {
@@ -135,7 +137,7 @@ public class BookService implements IBookService {
         return DriverManager.getConnection(CONNECTION_URL, USER_NAME, PASSWORD);
     }
 
-    private static final String CONNECTION_URL = "jdbc:derby://localhost:1527/SEDB";
-    private static final String USER_NAME = "APP";
-    private static final String PASSWORD = "APP";
+    private static final String CONNECTION_URL = "jdbc:hsqldb:hsql://localhost/mydb";
+    private static final String USER_NAME = "SA";
+    private static final String PASSWORD = "SA";
 }

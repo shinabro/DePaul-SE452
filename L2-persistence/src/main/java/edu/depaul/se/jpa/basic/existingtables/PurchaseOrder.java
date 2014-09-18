@@ -15,32 +15,33 @@ import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+
 @Entity
 @Table(name = "PURCHASE_ORDER")
 @NamedQueries({
-    @NamedQuery(name=PurchaseOrder.PURCHASE_ORDER_QUERY_ALL, 
-        query="select p from PurchaseOrder p"),
-    @NamedQuery(name = PurchaseOrder.PURCHASE_ORDER_QUERY_BY_CUSTOMER, 
-        query = "SELECT p FROM PurchaseOrder p WHERE p.customerId = :" + PurchaseOrder.CUSTOMER_ID_PARAMETER_NAME),
-})
+    @NamedQuery(name = PurchaseOrder.PURCHASE_ORDER_QUERY_ALL,
+            query = "select p from PurchaseOrder p"),
+    @NamedQuery(name = PurchaseOrder.PURCHASE_ORDER_QUERY_BY_CUSTOMER,
+            query = "SELECT p FROM PurchaseOrder p WHERE p.customerId = :" + PurchaseOrder.CUSTOMER_ID_PARAMETER_NAME),})
 @NamedNativeQueries({
-    @NamedNativeQuery(name=PurchaseOrder.PURCHASE_ORDER_NATIVE_QUERY_ALL, query="select * from purchase_order")
+    @NamedNativeQuery(name = PurchaseOrder.PURCHASE_ORDER_NATIVE_QUERY_ALL, query = "select * from purchase_order")
 })
 public class PurchaseOrder implements Serializable {
+
     public static final String PURCHASE_ORDER_QUERY_ALL = "PurchaseOrder.findAll";
     public static final String PURCHASE_ORDER_NATIVE_QUERY_ALL = "PurchaseOrder.nativeFindAll";
     public static final String PURCHASE_ORDER_QUERY_BY_CUSTOMER = "PurchaseOrder.findByCustomer";
     public static final String CUSTOMER_ID_PARAMETER_NAME = "customerId";
-    
+
     private static final long serialVersionUID = 1L;
     @Id
     @Column(name = "ORDER_NUM")
     private Integer orderNum;
-    
+
     @Temporal(TemporalType.DATE)
-    @Column(name="SALES_DATE")
+    @Column(name = "SALES_DATE")
     private Date salesDate;
-    
+
     @JoinColumn(name = "CUSTOMER_ID", referencedColumnName = "CUSTOMER_ID")
     @ManyToOne(optional = false)
     private Customer customerId;
@@ -129,5 +130,5 @@ public class PurchaseOrder implements Serializable {
     public String toString() {
         return "PurchaseOrder[ orderNum=" + orderNum + " ]";
     }
-    
+
 }

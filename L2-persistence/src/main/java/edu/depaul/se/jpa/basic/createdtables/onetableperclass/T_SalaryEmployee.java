@@ -1,10 +1,10 @@
-
 package edu.depaul.se.jpa.basic.createdtables.onetableperclass;
 
 import javax.persistence.Entity;
 
 @Entity
-public class T_SalaryEmployee extends T_Employee{
+public class T_SalaryEmployee extends T_Employee {
+
     private int salary;
 
     public int getSalary() {

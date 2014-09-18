@@ -8,6 +8,7 @@ import edu.depaul.se.calculator.log.jpa.Logger;
  * Performs "business" logic
  */
 public final class Calculator implements ICalculator {
+
     private Logger logger = new Logger();
 
     /**
@@ -46,12 +47,13 @@ public final class Calculator implements ICalculator {
      * @return
      */
     @Override
-    public double divide(double numerator, double denominator) throws DivideByZeroException{
+    public double divide(double numerator, double denominator) throws DivideByZeroException {
         double result = numerator / denominator;
         logger.log(numerator + " / " + denominator + " = " + result);
 
-        if (denominator == 0)
+        if (denominator == 0) {
             throw new DivideByZeroException();
+        }
 
         return result;
     }
@@ -67,5 +69,6 @@ public final class Calculator implements ICalculator {
     public double subtract(double lhs, double rhs) {
         double result = lhs - rhs;
         logger.log(lhs + " - " + rhs + " = " + result);
-        return result;    }
+        return result;
+    }
 }

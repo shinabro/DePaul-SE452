@@ -32,7 +32,7 @@ public class BookService implements IBookService {
         } else {
             bookToUpdate = book;
         }
-            
+
         em.persist(bookToUpdate);
         tx.commit();
     }

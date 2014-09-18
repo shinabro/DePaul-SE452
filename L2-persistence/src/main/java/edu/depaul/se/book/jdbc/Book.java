@@ -9,15 +9,19 @@ public class Book implements IBook {
     private String isbn;
     private String title;
     private int version;
-    
-    @Override
-    public String getAuthor() { return author;}
 
     @Override
-    public Long getId() { return id;}
+    public String getAuthor() {
+        return author;
+    }
 
     @Override
-    public String getIsbn() { 
+    public Long getId() {
+        return id;
+    }
+
+    @Override
+    public String getIsbn() {
         return isbn;
     }
 
@@ -55,5 +59,5 @@ public class Book implements IBook {
     public String toString() {
         return "Book{" + "author=" + author + ", id=" + id + ", isbn=" + isbn + ", title=" + title + ", version=" + version + '}';
     }
-    
+
 }

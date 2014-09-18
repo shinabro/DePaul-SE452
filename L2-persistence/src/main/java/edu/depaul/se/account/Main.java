@@ -11,9 +11,9 @@ import javax.persistence.Persistence;
 public class Main {
 
     public static void main(String[] args) throws Exception {
-        String connectionUrl = "jdbc:hsqldb:mem:.";
-        String userName = "";
-        String password = "";
+        String connectionUrl = "jdbc:hsqldb:hsql://localhost/mydb";
+        String userName = "SA";
+        String password = "SA";
 
         Connection con = DriverManager.getConnection(connectionUrl, userName, password);
         

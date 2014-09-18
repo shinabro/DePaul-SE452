@@ -7,28 +7,27 @@ import javax.validation.constraints.NotNull;
 //import org.eclipse.persistence.annotations.Cache;
 //import org.eclipse.persistence.annotations.CacheType;
 
-
-
 @Entity
 //@Cache(type= CacheType.WEAK, expiry=60000)
-@NamedQuery(name="findAllBooks", query="select b from Book b")
+@NamedQuery(name = "findAllBooks", query = "select b from Book b")
 public class Book implements Serializable, IBook {
+
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    
+
     @Version
     private Integer version;
 
     @NotNull
     private String title;
-    
+
     @NotNull
     private String author;
-    
+
     private String isbn;
-    
+
     @Override
     public Integer getVersion() {
         return version;
@@ -63,7 +62,7 @@ public class Book implements Serializable, IBook {
     public void setTitle(String title) {
         this.title = title;
     }
-    
+
     @Override
     public Long getId() {
         return id;
@@ -95,7 +94,8 @@ public class Book implements Serializable, IBook {
 
     @Override
     public String toString() {
-        return "edu.depaul.se.jpa.basic.Book[ id=" + id + " ]";
+        return "Book{" + "id=" + id + ", version=" + version + ", title=" + title + ", author=" + author + ", isbn=" + isbn + '}';
     }
-    
+
+
 }

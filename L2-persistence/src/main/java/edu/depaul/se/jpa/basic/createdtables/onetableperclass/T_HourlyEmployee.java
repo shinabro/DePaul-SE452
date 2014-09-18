@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 
 @Entity
 public class T_HourlyEmployee extends T_Employee {
+
     private int hourlyRate;
 
     public int getHourlyRate() {

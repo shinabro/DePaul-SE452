@@ -13,14 +13,15 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
-@Inheritance(strategy= InheritanceType.TABLE_PER_CLASS)
-public abstract class T_Employee implements Serializable{
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+public abstract class T_Employee implements Serializable {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     private String name;
     @Temporal(TemporalType.DATE)
-    @Column(name="S_DATE")
+    @Column(name = "S_DATE")
     private Date startDate;
 
     /**

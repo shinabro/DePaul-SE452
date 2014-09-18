@@ -4,12 +4,13 @@ import java.io.Serializable;
 import javax.persistence.Embeddable;
 
 @Embeddable
-public class Address implements Serializable{
+public class Address implements Serializable {
+
     /**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-	private String addressLine1;
+     *
+     */
+    private static final long serialVersionUID = 1L;
+    private String addressLine1;
     private String addressLine2;
     private String city;
     private String state;
@@ -69,10 +70,10 @@ public class Address implements Serializable{
     public void setState(String state) {
         this.state = state;
     }
-    
+
     @Override
     public String toString() {
-        return "edu.depaul.se.jpa.basic.Address[address=["+addressLine1+"]";
+        return "edu.depaul.se.jpa.basic.Address[address=[" + addressLine1 + "]";
     }
 
 }

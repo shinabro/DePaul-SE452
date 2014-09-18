@@ -11,15 +11,16 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
-@Table(name="DBLogs")
+@Table(name = "DBLogs")
 public class DBLogger implements Serializable {
+
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    
+
     private String message;
-    
+
     @Temporal(TemporalType.TIMESTAMP)
     private final Date msg_created_time;
 
@@ -27,7 +28,7 @@ public class DBLogger implements Serializable {
         id = System.currentTimeMillis();
         msg_created_time = new Date(System.currentTimeMillis());
     }
-    
+
     public String getMessage() {
         return message;
     }
@@ -60,5 +61,5 @@ public class DBLogger implements Serializable {
         DBLogger other = (DBLogger) object;
         return (this.id != null || other.id == null) && (this.id == null || this.id.equals(other.id));
     }
-    
+
 }

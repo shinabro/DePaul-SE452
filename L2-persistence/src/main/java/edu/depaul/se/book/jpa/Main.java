@@ -7,13 +7,13 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
 /**
- * JPA using main
- * Be sure to start the database before starting this
+ * JPA using main Be sure to start the database before starting this
  */
 public class Main {
+
     private static EntityManagerFactory emf;
     private static EntityManager em;
-    
+
     public static void main(String[] args) {
         Main main = new Main();
         emf = Persistence.createEntityManagerFactory("jpa-demoPU");
@@ -29,7 +29,7 @@ public class Main {
     private void createExample() {
         Book book = new Book();
         book.setTitle("Beginning Java Persistence");
-        
+
         EntityTransaction tx = em.getTransaction();
         tx.begin();
         System.out.print("Before save: ");
@@ -38,13 +38,13 @@ public class Main {
         System.out.print("After save: ");
         System.out.println(book.getId());
         tx.commit();
-        
-        List<Book> books = 
-                em.createNamedQuery("findAllBooks").getResultList();
-        
+
+        List<Book> books
+                = em.createNamedQuery("findAllBooks").getResultList();
+
         System.out.println("Number of rows: " + books.size());
     }
-    
+
     private void updateExample() {
         EntityTransaction tx = em.getTransaction();
         tx.begin();
@@ -52,12 +52,12 @@ public class Main {
         System.out.println(book);
         book.setTitle(book.getTitle() + " 2nd edition");
         tx.commit();
-        
-        List<Book> books = 
-                em.createNamedQuery("findAllBooks").getResultList();
+
+        List<Book> books
+                = em.createNamedQuery("findAllBooks").getResultList();
         System.out.println(books.get(0));
     }
-    
+
     private void deleteExample() {
         EntityTransaction tx = em.getTransaction();
         tx.begin();
@@ -65,24 +65,24 @@ public class Main {
         System.out.println(book);
         em.remove(book);
         tx.commit();
-        
-        List<Book> books = 
-                em.createNamedQuery("findAllBooks").getResultList();
+
+        List<Book> books
+                = em.createNamedQuery("findAllBooks").getResultList();
         System.out.print("After delete number of rows remaining is: ");
         System.out.println(books.size());
     }
-    
+
     private void findEntity() {
-        
+
         // 2a.  Find the entity via primary key, auto configured
         Book book = em.find(Book.class, new Long(1));
-        
+
         // 2b.  Find via query, manually configured, see Book class definition
-        List<Book> books = 
-                em.createNamedQuery("findAllBooks").getResultList();
-        
+        List<Book> books
+                = em.createNamedQuery("findAllBooks").getResultList();
+
     }
-    
+
     private void deleteEntity() {
         EntityTransaction tx = em.getTransaction();
         tx.begin();
@@ -90,11 +90,11 @@ public class Main {
         System.out.println(book);
         em.remove(book);
         tx.commit();
-        
-        List<Book> books = 
-                em.createNamedQuery("findAllBooks").getResultList();
+
+        List<Book> books
+                = em.createNamedQuery("findAllBooks").getResultList();
         System.out.print("After delete number of rows remaining is: ");
         System.out.println(books.size());
     }
-    
+
 }
