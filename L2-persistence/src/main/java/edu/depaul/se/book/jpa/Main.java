@@ -16,7 +16,9 @@ public class Main {
 
     public static void main(String[] args) {
         Main main = new Main();
-        emf = Persistence.createEntityManagerFactory("jpa-demoPU");
+        // jpa-inMemoryDemoPU
+        // jpa-demoPU
+        emf = Persistence.createEntityManagerFactory("jpa-inMemoryDemoPU");
         em = emf.createEntityManager();
         main.createExample();
         main.findEntity();

@@ -23,7 +23,17 @@
       <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
     </properties>
   </persistence-unit>
-  
+  <persistence-unit name="jpa-inMemoryDemoPU" transaction-type="RESOURCE_LOCAL">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <jar-file>file:../classes</jar-file>
+    <properties>
+      <property name="javax.persistence.jdbc.driver" value="org.hsqldb.jdbc.JDBCDriver"/>
+      <property name="javax.persistence.jdbc.url" value="jdbc:hsqldb:mem:mymemdb"/>
+      <property name="javax.persistence.jdbc.user" value="SA"/>
+      <property name="javax.persistence.jdbc.password" value="SA"/>
+      <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
+    </properties>
+  </persistence-unit>
   <!-- 
     Existing tables based on Netbeans sample database 
   -->
