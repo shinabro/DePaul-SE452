@@ -16,9 +16,6 @@ import static org.junit.Assert.*;
  * Since tables are already defined as part of sample installation in NetBeans
  * <p>
  * Table Generation Strategy is set to None
- * <p>
- * This example leverages existing table that is installed with Derby out of the box database installation when using Eclpse or Netbeans
- * and so need to move the keep-table-as-is.xml as persistence.xml
  */
 public class SelectorTest {
     

@@ -6,9 +6,6 @@
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
       <property name="eclipselink.logging.level" value="FINEST"/>
-      <!--
-             <property name="javax.persistence.jdbc.url" value="jdbc:hsqldb:hsql://localhost/mydb"/>
-            -->
       <property name="javax.persistence.jdbc.url" value="jdbc:hsqldb:hsql://localhost/mydb"/>
       <property name="javax.persistence.jdbc.user" value="SA"/>
       <property name="javax.persistence.jdbc.password" value="SA"/>
@@ -17,7 +14,7 @@
   </persistence-unit>
   <persistence-unit name="jpa-demoPU" transaction-type="RESOURCE_LOCAL">
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
-    <class>edu.depaul.se.book.jpa.Book</class>
+    <jar-file>file:../classes</jar-file>
     <properties>
       <property name="javax.persistence.jdbc.driver" value="org.hsqldb.jdbc.JDBCDriver"/>
       <property name="javax.persistence.jdbc.url" value="jdbc:hsqldb:hsql://localhost/mydb"/>
@@ -26,19 +23,23 @@
       <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
     </properties>
   </persistence-unit>
-  <persistence-unit name="jpaPU" transaction-type="RESOURCE_LOCAL">
+  
+  <!-- 
+    Existing tables based on Netbeans sample database 
+  -->
+  <persistence-unit name="existingTablePU" transaction-type="RESOURCE_LOCAL">
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
-    <class>edu.depaul.se.account.persistence.Book</class>
+    <class>edu.depaul.se.jpa.basic.existingtables.PurchaseOrder</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
       <property name="eclipselink.logging.level" value="FINEST"/>
       <!--
              <property name="javax.persistence.jdbc.url" value="jdbc:hsqldb:hsql://localhost/mydb"/>
             -->
-      <property name="javax.persistence.jdbc.url" value="jdbc:hsqldb:hsql://localhost/mydb"/>
-      <property name="javax.persistence.jdbc.user" value="SA"/>
-      <property name="javax.persistence.jdbc.password" value="SA"/>
-      <property name="javax.persistence.jdbc.driver" value="org.hsqldb.jdbc.JDBCDriver"/>
+      <property name="javax.persistence.jdbc.url" value="jdbc:derby://localhost:1527/sample"/>
+      <property name="javax.persistence.jdbc.user" value="app"/>
+      <property name="javax.persistence.jdbc.password" value="app"/>
+      <property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.ClientDriver"/>
     </properties>
   </persistence-unit>
 </persistence>

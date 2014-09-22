@@ -14,7 +14,7 @@ public class AbstractJPATest {
     @BeforeClass
     public static void setUpClass() throws Exception {
         // 1. Acquire Entity Manager 
-        setEmf(Persistence.createEntityManagerFactory("jpaPU"));
+        setEmf(Persistence.createEntityManagerFactory("jpa-demoPU"));
         setEm(getEmf().createEntityManager());
     }
 

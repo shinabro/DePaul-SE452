@@ -15,7 +15,7 @@ public class BookService implements IBookService {
     private EntityManager em;
 
     public BookService() {
-        em = Persistence.createEntityManagerFactory("jpaPU").createEntityManager();
+        em = Persistence.createEntityManagerFactory("jpa-demoPU").createEntityManager();
     }
 
     @Override
