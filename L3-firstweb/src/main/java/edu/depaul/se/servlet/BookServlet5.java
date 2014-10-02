@@ -1,13 +1,13 @@
 package edu.depaul.se.servlet;
 
+import edu.depaul.se.book.IBook;
+import edu.depaul.se.book.jdbc.Book;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
@@ -19,25 +19,25 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.sql.DataSource;
 
-import users.dao.dataobject.User;
 ;
 
 /**
- * Servlet implementation class UserServlet4
- * Using server configuration rather than web app configuration
+ * Servlet implementation class UserServlet5 Same as Servlet4 but using
+ * connection pool
  */
 @WebServlet(
-		urlPatterns = { "/UserServlet4" } 
-		)
-public class UserServlet4 extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-       
+        urlPatterns = {"/BookServlet5"}
+)
+public class BookServlet5 extends HttpServlet {
+
+    private static final long serialVersionUID = 1L;
+
     private Connection con;
 
     @Override
     public void init() {
-        try { 
-        	/*
+        try {
+            /*
         	 * For Tomcat, need context.xml
         	 * For Tomcat in Eclipse, need server.xml
         	 * 
@@ -46,26 +46,27 @@ public class UserServlet4 extends HttpServlet {
                username="" password="" driverClassName="org.hsqldb.jdbcDriver"
                url="jdbc:hsqldb:mem:."/>
 
-        	 */
-        	Context initContext = new InitialContext();
-        	Context envContext  = (Context)initContext.lookup("java:/comp/env");
-        	DataSource ds = (DataSource)envContext.lookup("jdbc/TestDB");
-        	
+             */
+            Context initContext = new InitialContext();
+            Context envContext = (Context) initContext.lookup("java:/comp/env");
+            DataSource ds = (DataSource) envContext.lookup("jdbc/TestDBCP");
+
             try {
                 con = ds.getConnection();
             } catch (SQLException ex) {
-                Logger.getLogger(UserServlet4.class.getName()).log(Level.SEVERE, null, ex);
+                log("SQLError in initialization", ex);
             }
 
         } catch (NamingException ex) {
-            Logger.getLogger(UserServlet4.class.getName()).log(Level.SEVERE, null, ex);
+            log("Lookup failed in initialization", ex);
         }
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    /**
+     * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+     * response)
+     */
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
 
@@ -80,14 +81,14 @@ public class UserServlet4 extends HttpServlet {
             // Step 5:  Processing the result
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>User Servlet with jdbc reference rather than hard coding database reference</title>");
+            out.println("<title>Book Servlet with jdbc reference rather than hard coding database reference</title>");
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet UserServlet4 at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet BookServlet4 at " + request.getContextPath() + "</h1>");
 
             while (rs.next()) {
-                users.dao.dataobject.User user = map(rs);
-                out.print(user);
+                IBook book = map(rs);
+                out.print(book);
                 out.print("<p>");
             }
 
@@ -98,29 +99,31 @@ public class UserServlet4 extends HttpServlet {
             rs.close();
             stmt.close();
         } catch (Exception e) {
-        	e.printStackTrace();
+            e.printStackTrace();
         } finally {
             out.close();
         }
-	}
-	
-    private User map (ResultSet rs) throws SQLException {
-        return map(rs.getInt(1), rs.getString(2));
     }
 
-    private User map(int id, String name) {
-        User user = new User();
-        user.setId(id);
-        user.setName(name);
-
-        return user;
+    private IBook map(ResultSet rs) {
+        Book b = new Book();
+        try {
+            b.setId(rs.getLong("id"));
+            b.setAuthor(rs.getString("author"));
+            b.setIsbn(rs.getString("isbn"));
+            b.setTitle(rs.getString("title"));
+        } catch (SQLException ex) {
+            log("SQLError while getting result from ResultSet", ex);
+        }
+        return b;
     }
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-	}
+    /**
+     * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+     * response)
+     */
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // TODO Auto-generated method stub
+    }
 
 }

@@ -15,7 +15,7 @@
         <dependency>
             <groupId>edu.depaul.cdm.se</groupId>
             <artifactId>persistence</artifactId>
-            <version>1.0.0</version>
+            <version>1.0</version>
         </dependency>
     </dependencies>
 </project>
