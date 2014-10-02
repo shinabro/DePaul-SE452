@@ -55,7 +55,7 @@ public class BookTest extends AbstractJPATest {
         assertEquals(afterCount + 1, priorCount);
     }
 
-    @Test
+    //@Test
     public void testBookService() {
         Book book = new Book();
         book.setTitle("Beginning Java Persistence");
