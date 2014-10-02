@@ -1,6 +1,5 @@
 package edu.depaul.se.account.persistence;
 
-import edu.depaul.se.account.business.AccountManager;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;

@@ -19,7 +19,26 @@ public class BookService implements IBookService {
 
     private static final String DB_DRIVER = "org.hsqldb.jdbc.JDBCDriver";
     
+    private String connectionURL = "jdbc:hsqldb:hsql://localhost/mydb";
+    private String userName = "SA";
+    private String password = "SA";
+
+    /**
+     * Default connection of "jdbc:hsqldb:hsql://localhost/mydb";
+     */
     public BookService() {
+    }
+
+    /**
+     * Allow client to specify connection information
+     * @param connectionString
+     * @param user
+     * @param password 
+     */
+    public BookService(String connectionString, String user, String password) {
+        this.connectionURL = connectionString;
+        this.userName = user;
+        this.password = password;
     }
 
     @Override
@@ -134,10 +153,6 @@ public class BookService implements IBookService {
     }
 
     private Connection getConnection() throws SQLException {
-        return DriverManager.getConnection(CONNECTION_URL, USER_NAME, PASSWORD);
+        return DriverManager.getConnection(connectionURL, userName, password);
     }
-
-    private static final String CONNECTION_URL = "jdbc:hsqldb:hsql://localhost/mydb";
-    private static final String USER_NAME = "SA";
-    private static final String PASSWORD = "SA";
 }
