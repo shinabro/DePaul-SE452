@@ -45,7 +45,8 @@ public class BookServlet5 extends HttpServlet {
                maxActive="100" maxIdle="30" maxWait="10000"
                username="" password="" driverClassName="org.hsqldb.jdbcDriver"
                url="jdbc:hsqldb:mem:."/>
-
+            
+                Need to copy database driver file to Tomcat/lib directory
              */
             Context initContext = new InitialContext();
             Context envContext = (Context) initContext.lookup("java:/comp/env");
@@ -76,7 +77,7 @@ public class BookServlet5 extends HttpServlet {
             Statement stmt = con.createStatement();
 
             // Step 4:  Get the resultset from the result of executing a query
-            ResultSet rs = stmt.executeQuery("select * from users");
+            ResultSet rs = stmt.executeQuery("select * from book");
 
             // Step 5:  Processing the result
             out.println("<html>");

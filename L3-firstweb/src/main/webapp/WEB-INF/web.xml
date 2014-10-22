@@ -6,7 +6,7 @@
         <servlet-class>edu.depaul.se.servlet.BookServlet2</servlet-class>
         <init-param>
             <param-name>connectionString</param-name>
-            <param-value>jdbc:hsqldb:mem:.</param-value> 
+            <param-value>jdbc:hsqldb:mem:SE452</param-value> 
             <!-- 
          <param-value>jdbc:hsqldb:hsql://localhost/mydb</param-value>
             -->

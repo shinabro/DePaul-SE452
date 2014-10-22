@@ -78,7 +78,7 @@ public class BookServlet4 extends HttpServlet {
             Statement stmt = con.createStatement();
 
             // Step 4:  Get the resultset from the result of executing a query
-            ResultSet rs = stmt.executeQuery("select * from users");
+            ResultSet rs = stmt.executeQuery("select * from book");
 
             // Step 5:  Processing the result
             out.println("<html>");

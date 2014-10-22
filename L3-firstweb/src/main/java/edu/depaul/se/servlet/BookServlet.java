@@ -14,17 +14,17 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class UserServlet
+ * Sample showing calling java database call similar to just from standalone
  */
-@WebServlet("/AccountServlet")
-public class AccountServlet extends HttpServlet {
+@WebServlet("/BookServlet")
+public class BookServlet extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
 
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public AccountServlet() {
+    public BookServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -39,15 +39,19 @@ public class AccountServlet extends HttpServlet {
 
         out.println("<html>");
         out.println("<head>");
-        out.println("<title>Servlet AccountServlet</title>");
+        out.println("<title>Servlet BookServlet</title>");
         out.println("</head>");
         out.println("<body>");
         out.println("<h1>Servlet AccountServlet at " + request.getContextPath() + "</h1>");
+        String connectionString = "jdbc:hsqldb:mem:SE452";
+        String user = "";
+        String password = "";
 
-        AccountManager accountManager = new AccountManager();
-        for (IAccount account : accountManager.getAccountList()) {
+        BookService dao = new BookService(connectionString, user, password);
+
+        for (IBook book : dao.getAllBooks()) {
             out.println("<li>");
-            out.println(account);
+            out.println(book);
         }
 
         out.println("</body>");
