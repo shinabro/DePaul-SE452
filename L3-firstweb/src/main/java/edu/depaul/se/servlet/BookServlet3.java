@@ -21,7 +21,7 @@ import javax.servlet.http.HttpServletResponse;
         urlPatterns = {"/BookServlet3"},
         //				@WebInitParam(name = "connectionString", value = "jdbc:hsqldb:hsql://localhost/mydb"), 
         initParams = {
-            @WebInitParam(name = "connectionString", value = "jdbc:hsqldb:mem:."),
+            @WebInitParam(name = "connectionString", value = "jdbc:hsqldb:mem:SE452"),
             @WebInitParam(name = "userName", value = ""),
             @WebInitParam(name = "password", value = "")
         })

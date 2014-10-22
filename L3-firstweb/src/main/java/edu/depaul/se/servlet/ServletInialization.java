@@ -45,12 +45,10 @@ public class ServletInialization implements ServletContextListener {
             DataSource ds = (DataSource) envContext.lookup("jdbc/TestDB");
 
             System.out.println("Before regular table creation");
-            createAccount(DriverManager.getConnection("jdbc:hsqldb:mem:SE452", "", ""));
-            createBooks(DriverManager.getConnection("jdbc:hsqldb:mem:SE452", "", ""));
+            //createBooks(DriverManager.getConnection("jdbc:hsqldb:mem:SE452", "", ""));
             System.out.println("After regular table creation");
 
             System.out.println("Before jdbcDriver");
-            createAccount(ds.getConnection());
             createBooks(ds.getConnection());
             System.out.println("After datasource table creation");
             
