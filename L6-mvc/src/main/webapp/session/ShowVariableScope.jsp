@@ -14,6 +14,6 @@
         </jsp:useBean>
         Something before<br>
         <!--  3.  Change include to forward -->
-        <jsp:include page="receiver.jsp"/>
+        <jsp:include page="Receiver.jsp"/>
         <br>Something after
 </html>
