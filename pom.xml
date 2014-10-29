@@ -15,7 +15,6 @@
         <module>L2-persistence</module>
         <module>L3-firstweb</module>
         <module>L6-mvc</module>
-        <module>L7-session</module>
         <module>L8-webframework</module>
         <module>L9-filterlistener</module>
     </modules>
