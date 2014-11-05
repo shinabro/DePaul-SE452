@@ -45,8 +45,8 @@ public class InitializationServlet implements ServletContextListener {
         	Context envContext  = (Context)initContext.lookup("java:/comp/env");
         	DataSource ds = (DataSource)envContext.lookup("jdbc/TestDB");
 
-        	createUserTable(ds.getConnection());
-        	//createUserTable(DriverManager.getConnection("jdbc:hsqldb:mem:.", "", ""));
+//        	createUserTable(ds.getConnection());
+        	createUserTable(DriverManager.getConnection("jdbc:hsqldb:mem:.", "", ""));
 
         } catch (Exception e) {
             // TODO Auto-generated catch block
