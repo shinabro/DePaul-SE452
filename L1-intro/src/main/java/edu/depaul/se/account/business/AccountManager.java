@@ -10,12 +10,11 @@ import edu.depaul.se.account.IAccount;
 public class AccountManager implements Serializable {
 
     /**
-	 * 
-	 */
-	private static final long serialVersionUID = -1118467706141443769L;
-	
-	
-	private static final Logger logger = Logger.getLogger(AccountManager.class.getName());
+     *
+     */
+    private static final long serialVersionUID = -1118467706141443769L;
+
+    private static final Logger logger = Logger.getLogger(AccountManager.class.getName());
 
     /**
      * @return all the accounts we know about

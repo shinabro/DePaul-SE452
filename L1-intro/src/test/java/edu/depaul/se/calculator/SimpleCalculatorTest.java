@@ -6,18 +6,23 @@ import static org.junit.Assert.fail;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import edu.depaul.se.calculator.business.Calculator;
+import edu.depaul.se.calculator.business.SimpleCalculator;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
 
-public class CalculatorTest {
+/**
+ * Example to show JUnit test
+ */
+public class SimpleCalculatorTest {
     
     private static ICalculator calculator;
     
-    public CalculatorTest() {
+    public SimpleCalculatorTest() {
     }
     
     @BeforeClass
     public static void setUpClass() {
-        calculator = new Calculator();
+        calculator = new SimpleCalculator();
     }
 
     @Test

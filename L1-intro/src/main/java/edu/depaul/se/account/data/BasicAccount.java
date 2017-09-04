@@ -3,7 +3,10 @@ package edu.depaul.se.account.data;
 import edu.depaul.se.account.IAccount;
 import java.io.Serializable;
 
-public class AccountData implements Serializable, IAccount {
+/**
+ * 
+ */
+public class BasicAccount implements Serializable, IAccount {
     private static final long serialVersionUID = 1L;
     private Long id;
     
@@ -51,10 +54,10 @@ public class AccountData implements Serializable, IAccount {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof AccountData)) {
+        if (!(object instanceof BasicAccount)) {
             return false;
         }
-        AccountData other = (AccountData) object;
+        BasicAccount other = (BasicAccount) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
