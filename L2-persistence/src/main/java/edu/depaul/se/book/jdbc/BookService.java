@@ -73,12 +73,12 @@ public class BookService implements IBookService {
     @Override
     public List<IBook> getAllBooks() {
         ArrayList<IBook> books = new ArrayList<>();
-
+        Connection con = null;
         try {
             Class.forName(DB_DRIVER);
 
             // Step 2:  Request a connection from the DriverManager
-            Connection con = getConnection();
+            con = getConnection();
 
             // Step 3:  Create a statement where the SQL statement will be provided
             Statement stmt = con.createStatement();
@@ -95,11 +95,17 @@ public class BookService implements IBookService {
             // Step 6:  Closing the connection
             rs.close();
             stmt.close();
-            con.close();
         } catch (SQLException | ClassNotFoundException ex) {
             // Will have to work out the proper exception handling b/c this is not 
             // proper
             log.log(Level.SEVERE, null, ex);
+        } finally {
+            if (con != null)
+                try {
+                    con.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(BookService.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
 
         return books;
