@@ -5,14 +5,6 @@
     <name>SE452 :: Example :: BasicJava</name>
     <description>Java and environment overview</description>
 
-<!--
-    <parent>
-        <groupId>edu.depaul.cdm.se</groupId>
-        <artifactId>examples</artifactId>
-        <version>1.0</version>
-        <relativePath>..</relativePath>
-    </parent>
--->
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
