@@ -22,7 +22,7 @@
     </properties>
 
     <groupId>edu.depaul.cdm.se</groupId>
-    <version>1.1</version>
+    <version>1.2</version>
     <dependencies>
         <dependency>
             <groupId>org.junit.platform</groupId>
