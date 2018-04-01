@@ -1,33 +1,34 @@
 package edu.depaul.se.calculator;
 
 import edu.depaul.se.calculator.business.FancyCalculator;
-import static org.junit.Assert.assertEquals;
-import org.junit.BeforeClass;
-import org.junit.Test;
-import static org.junit.Assert.assertEquals;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 
 /**
  *
  */
-public class FancyCalculatorTest {
+class FancyCalculatorTest {
     private static ICalculator calculator;
     
-    public FancyCalculatorTest() {
+    FancyCalculatorTest() {
     }
     
-    @BeforeClass
-    public static void setUpClass() {
+    @BeforeAll
+    static void setUpClass() {
         calculator = new FancyCalculator();
     }
 
     @Test
-    public void testAdd() {
+    void testAdd() {
         double lhs = 1.0;
         double rhs = 1.5;
         double expectedResult = 2.5;
         
         double result = calculator.add(lhs, rhs);
-        assertEquals(expectedResult, result, 0.0);
+        assertEquals(expectedResult, result);
     }
     
 }

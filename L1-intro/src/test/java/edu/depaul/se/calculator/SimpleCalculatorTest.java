@@ -1,76 +1,74 @@
 package edu.depaul.se.calculator;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.fail;
-
-import org.junit.BeforeClass;
-import org.junit.Test;
-
 import edu.depaul.se.calculator.business.SimpleCalculator;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.fail;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 /**
  * Example to show JUnit test
  */
-public class SimpleCalculatorTest {
+class SimpleCalculatorTest {
     
     private static ICalculator calculator;
     
-    public SimpleCalculatorTest() {
+    SimpleCalculatorTest() {
     }
     
-    @BeforeClass
-    public static void setUpClass() {
+    @BeforeAll
+    static void setUpClass() {
         calculator = new SimpleCalculator();
     }
 
     @Test
-    public void testAdd() {
+    void testAdd() {
         double lhs = 1.0;
         double rhs = 1.5;
         double expectedResult = 2.5;
         
         double result = calculator.add(lhs, rhs);
-        assertEquals(expectedResult, result, 0.0);
+        assertEquals(expectedResult, result);
     }
 
     @Test
-    public void testSubtract() {
+    void testSubtract() {
         double lhs = 1.5;
         double rhs = 1.0;
         double expectedResult = 0.5;
         
         double result = calculator.subtract(lhs, rhs);
-        assertEquals(expectedResult, result, 0.0);
+        assertEquals(expectedResult, result);
     }
     
     @Test
-    public void testMultiply() {
+    void testMultiply() {
         double lhs = 2.0;
         double rhs = 3.0;
         double expectedResult = 6.0;
         
         double result = calculator.multiply(lhs, rhs);
-        assertEquals(expectedResult, result, 0.0);
+        assertEquals(expectedResult, result);
     }
 
     @Test
-    public void testDivide() throws DivideByZeroException {
+    void testDivide() throws DivideByZeroException {
         double lhs = 6.0;
         double rhs = 3.0;
         double expectedResult = 2.0;
         
         double result = calculator.divide(lhs, rhs);
-        assertEquals(expectedResult, result, 0.0);
+        assertEquals(expectedResult, result);
     }
     
-    @Test(expected = DivideByZeroException.class)
-    public void testDivideWithException() throws DivideByZeroException {
+    @Test
+    void testDivideWithException() {
         double lhs = 6.0;
         double rhs = 0.0;
-        
-        calculator.divide(lhs, rhs);
-        fail("Should not have gotten here");
+
+        assertThrows(DivideByZeroException.class, () -> {
+            calculator.divide(lhs, rhs);
+        });
     }
 }
