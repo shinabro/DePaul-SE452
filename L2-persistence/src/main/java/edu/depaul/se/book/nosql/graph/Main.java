@@ -2,7 +2,6 @@ package edu.depaul.se.book.nosql.graph;
 
 import edu.depaul.se.book.IBook;
 import edu.depaul.se.book.jdbc.Book;
-import org.neo4j.driver.v1.*;
 
 import java.util.List;
 

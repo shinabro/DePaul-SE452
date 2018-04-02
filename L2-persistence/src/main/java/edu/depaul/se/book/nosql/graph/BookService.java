@@ -7,7 +7,6 @@ import edu.depaul.se.book.jdbc.Book;
 import org.neo4j.driver.v1.*;
 
 import javax.json.Json;
-import javax.json.JsonObject;
 import javax.json.JsonObjectBuilder;
 import java.util.ArrayList;
 import java.util.List;

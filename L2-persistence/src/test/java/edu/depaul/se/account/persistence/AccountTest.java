@@ -9,12 +9,11 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
-import org.junit.After;
-import static org.junit.Assert.assertEquals;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
-import org.springframework.test.annotation.Rollback;
+
+import org.junit.jupiter.api.*;
+
+import static org.junit.jupiter.api.Assertions.assertAll;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Test account persistence
@@ -29,8 +28,8 @@ public class AccountTest {
      * Setup data for the test
      * @throws java.sql.SQLException
      */
-    @BeforeClass
-    public static void beforeClass() throws SQLException {
+    @BeforeEach
+    public void beforeClass() throws SQLException {
         entityManagerFactory = Persistence.createEntityManagerFactory("jpa-inMemoryDemoPU");
         String connectionUrl = "jdbc:hsqldb:mem:SE452";
         String userName = "";
@@ -49,17 +48,17 @@ public class AccountTest {
         }
     }
 
-    @Before
+    @BeforeEach
     public void beforeEachTest() {
         entityManager = entityManagerFactory.createEntityManager();
     }
 
-    @After
+    @AfterEach
     public void afterEachTest() {
         entityManager.close();
     }
+
     @Test
-    @Rollback
     public void testInsert() {
         entityManager.getTransaction().begin();
         Account account = new Account();
@@ -74,8 +73,10 @@ public class AccountTest {
         entityManager.getTransaction().commit();
 
         Account verification = findAccount(newAccount);
-        assertEquals("Customer name", verification.getName(), account.getName());
-        assertEquals("Balance", verification.getBalance(), account.getBalance(), 0.0);
+        assertAll("account values",
+                () -> assertEquals(verification.getName(), account.getName()),
+                () -> assertEquals(verification.getBalance(), account.getBalance())
+        );
     }
     
     @Test
