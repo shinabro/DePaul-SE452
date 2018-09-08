@@ -1,66 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence version="2.0" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
-  <persistence-unit name="accountPU" transaction-type="RESOURCE_LOCAL">
-    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
-    <class>edu.depaul.se.account.persistence.Account</class>
-    <exclude-unlisted-classes>false</exclude-unlisted-classes>
-    <!-- Change to use the real database
-    <properties>
-      <property name="eclipselink.logging.level" value="FINEST"/>
-      <property name="javax.persistence.jdbc.url" value="jdbc:hsqldb:hsql://localhost/mydb"/>
-      <property name="javax.persistence.jdbc.user" value="SA"/>
-      <property name="javax.persistence.jdbc.password" value="SA"/>
-      <property name="javax.persistence.jdbc.driver" value="org.hsqldb.jdbc.JDBCDriver"/>
-    </properties>
-    -->
-    <properties>
-      <property name="javax.persistence.jdbc.driver" value="org.hsqldb.jdbc.JDBCDriver"/>
-      <property name="javax.persistence.jdbc.url" value="jdbc:hsqldb:mem:SE452"/>
-      <property name="javax.persistence.jdbc.user" value=""/>
-      <property name="javax.persistence.jdbc.password" value=""/>
-      <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
-    </properties>
-  </persistence-unit>
-  
   <persistence-unit name="jpa-demoPU" transaction-type="RESOURCE_LOCAL">
-    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
     <jar-file>file:../classes</jar-file>
     <properties>
-      <property name="javax.persistence.jdbc.driver" value="org.hsqldb.jdbc.JDBCDriver"/>
-      <property name="javax.persistence.jdbc.url" value="jdbc:hsqldb:hsql://localhost/mydb"/>
-      <property name="javax.persistence.jdbc.user" value="SA"/>
-      <property name="javax.persistence.jdbc.password" value="SA"/>
-      <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
-    </properties>
-  </persistence-unit>
-  <persistence-unit name="jpa-inMemoryDemoPU" transaction-type="RESOURCE_LOCAL">
-    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
-    <jar-file>file:../classes</jar-file>
-    <properties>
-      <property name="javax.persistence.jdbc.driver" value="org.hsqldb.jdbc.JDBCDriver"/>
-      <property name="javax.persistence.jdbc.url" value="jdbc:hsqldb:mem:SE452"/>
-      <property name="javax.persistence.jdbc.user" value=""/>
+      <property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>
+      <property name="javax.persistence.jdbc.url" value="jdbc:h2:mem:example-app;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE"/>
+      <property name="javax.persistence.jdbc.user" value="sa"/>
       <property name="javax.persistence.jdbc.password" value=""/>
       <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
+      <property name = "hibernate.show_sql" value = "true" />
     </properties>
   </persistence-unit>
-  <!-- 
-    Existing tables based on Netbeans sample database 
-  -->
-  <persistence-unit name="existingTablePU" transaction-type="RESOURCE_LOCAL">
-    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
-    <class>edu.depaul.se.jpa.basic.existingtables.PurchaseOrder</class>
-    <exclude-unlisted-classes>false</exclude-unlisted-classes>
-    <properties>
-      <property name="eclipselink.logging.level" value="FINEST"/>
-      <!--
-             <property name="javax.persistence.jdbc.url" value="jdbc:hsqldb:hsql://localhost/mydb"/>
-            -->
-      <property name="javax.persistence.jdbc.url" value="jdbc:derby://localhost:1527/sample"/>
-      <property name="javax.persistence.jdbc.user" value="app"/>
-      <property name="javax.persistence.jdbc.password" value="app"/>
-      <property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.ClientDriver"/>
-    </properties>
-  </persistence-unit>
-  
+
 </persistence>
