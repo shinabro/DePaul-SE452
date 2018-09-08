@@ -1,6 +1,6 @@
-package edu.depaul.se.account.data;
+package edu.depaul.cdm.se.sampleproject.account.data;
 
-import edu.depaul.se.account.IAccount;
+import edu.depaul.cdm.se.sampleproject.account.IAccount;
 import java.io.Serializable;
 
 /**

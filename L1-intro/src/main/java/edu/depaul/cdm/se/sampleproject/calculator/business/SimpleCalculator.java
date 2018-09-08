@@ -1,7 +1,7 @@
-package edu.depaul.se.calculator.business;
+package edu.depaul.cdm.se.sampleproject.calculator.business;
 
-import edu.depaul.se.calculator.DivideByZeroException;
-import edu.depaul.se.calculator.ICalculator;
+import edu.depaul.cdm.se.sampleproject.calculator.DivideByZeroException;
+import edu.depaul.cdm.se.sampleproject.calculator.ICalculator;
 
 /**
  * Performs "business" logic

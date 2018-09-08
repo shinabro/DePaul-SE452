@@ -1,20 +1,15 @@
-package edu.depaul.se.calculator;
+package edu.depaul.cdm.se.sampleproject.calculator.business;
 
-import edu.depaul.se.calculator.business.FancyCalculator;
+import edu.depaul.cdm.se.sampleproject.calculator.ICalculator;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
+import static org.junit.jupiter.api.Assertions.*;
 
 /**
  *
  */
 class FancyCalculatorTest {
     private static ICalculator calculator;
-    
-    FancyCalculatorTest() {
-    }
     
     @BeforeAll
     static void setUpClass() {

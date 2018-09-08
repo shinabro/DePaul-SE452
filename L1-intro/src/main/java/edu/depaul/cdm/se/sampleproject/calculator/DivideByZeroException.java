@@ -1,4 +1,4 @@
-package edu.depaul.se.calculator;
+package edu.depaul.cdm.se.sampleproject.calculator;
 
 public class DivideByZeroException extends Exception {
     /**

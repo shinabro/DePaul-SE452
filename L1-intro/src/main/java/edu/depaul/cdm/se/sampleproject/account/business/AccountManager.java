@@ -1,11 +1,11 @@
-package edu.depaul.se.account.business;
+package edu.depaul.cdm.se.sampleproject.account.business;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import edu.depaul.se.account.IAccount;
+import edu.depaul.cdm.se.sampleproject.account.IAccount;
 
 public class AccountManager implements Serializable {
 

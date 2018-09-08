@@ -1,11 +1,11 @@
-package edu.depaul.se.calculator;
+package edu.depaul.cdm.se.sampleproject.calculator.business;
 
-import edu.depaul.se.calculator.business.SimpleCalculator;
+import edu.depaul.cdm.se.sampleproject.calculator.DivideByZeroException;
+import edu.depaul.cdm.se.sampleproject.calculator.ICalculator;
+
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * Example to show JUnit test

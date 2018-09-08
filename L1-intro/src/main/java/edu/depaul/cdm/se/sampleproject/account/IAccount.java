@@ -1,4 +1,4 @@
-package edu.depaul.se.account;
+package edu.depaul.cdm.se.sampleproject.account;
 
 /**
  * Sample interface to allow ensure consistent features.
