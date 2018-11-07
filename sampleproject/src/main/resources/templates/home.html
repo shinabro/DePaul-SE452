@@ -1,0 +1,20 @@
+<html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><title>Home Page</title></head>
+<body>
+<h1>Hello !</h1>
+<p>Welcome to <span th:text="${appName}">Our App</span></p>
+<span id="myId"><span>
+<script>
+document.getElementById('myId').innerHTML=listCookies()
+function listCookies() {
+    var theCookies = document.cookie.split(';');
+    var aString = '';
+    for (var i = 1 ; i <= theCookies.length; i++) {
+        aString += i  + ' ' + theCookies[i-1] + "<br>";
+    }
+    return aString;
+}
+</script>
+</body>
+</html>

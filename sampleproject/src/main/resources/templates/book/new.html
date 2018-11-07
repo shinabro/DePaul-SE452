@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta charset="UTF-8" />
+    <title>New Book</title>
+    <link href="../../static/css/bootstrap.min.css" th:href="@{css/bootstrap.min.css}" rel="stylesheet">
+</head>
+<body>
+        <h2>New Book</h2>
+
+        <div class="container">
+                <form action="#" th:action="book_new" th:object="${book}" method="post">
+                    <input type="hidden" th:field="*{id}" />
+                    <div class="form-group">
+                        <label>Title</label>
+                        <input type="text" th:field="*{title}" class="form-control" placeholder="Title">
+                    </div>
+                    <div class="form-group blu-margin">
+                        <label>Author</label>
+                        <select class="form-control" th:field="*{author}"  id="dropOperator">
+                            <option value="0" text="select author" ></option>
+                            <option th:each="author : ${authors}" th:value="${author.id}" th:text="${author.name}"></option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>ISBN</label>
+                        <input type="text" th:field="*{isbn}" class="form-control" placeholder="isbn">
+                    </div>
+                    <button type="submit" class="btn btn-default">Submit</button>
+                </form>
+            </div>
+            
+            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+            <script src="../../static/js/bootstrap.min.js" th:src="@{/js/bootstrap.min.js}"></script>
+                    
+    </form>
+</body>
+</html>

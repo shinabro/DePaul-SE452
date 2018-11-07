@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta charset="UTF-8" />
+    <title>Add Review</title>
+    <link href="../../static/css/bootstrap.min.css" th:href="@{css/bootstrap.min.css}" rel="stylesheet">
+</head>
+<body>
+<h2>Add Book Review</h2>
+
+<div class="container">
+    <div class="form-group">
+        <label>Title</label>
+        <span th:text="${book.title}"/>
+    </div>
+    <div class="form-group">
+        <label>Author</label>
+        <span th:text="${book.author.name}"/>
+    </div>
+    <div class="form-group">
+        <label>ISBN</label>
+        <span th:text="${book.isbn}"/>
+    </div>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Review</th>
+        </tr>
+        </thead>
+        <tr th:if="${reviews.empty}">
+            <td colspan="2"> No Comments Available </td>
+        </tr>
+        <tr th:each="review : ${reviews}">
+            <td><span th:text="${review.review}"> </span></td>
+        </tr>
+    </table>
+</div>
+
+<form action="#" th:action="book" method="post">
+    <input type="hidden" th:value="${book.isbn}"/>
+    <div class="form-group">
+        <label>New Review</label>
+        <input type="text" name="new_comment" class="form-control" placeholder="Review">
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+</form>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="../../static/js/bootstrap.min.js" th:src="@{/js/bootstrap.min.js}"></script>
+
+</form>
+</body>
+</html>
