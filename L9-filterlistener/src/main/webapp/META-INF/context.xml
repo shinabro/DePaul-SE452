@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<Context antiJARLocking="true" path="/filterlistener">
-  <!-- Data source example -->
-  <!-- See http://tomcat.apache.org/tomcat-7.0-doc/jndi-datasource-examples-howto.html -->
-  <Resource auth="Container" driverClassName="org.hsqldb.jdbcDriver" name="jdbc/TestDB" password="" type="javax.sql.DataSource" url="jdbc:hsqldb:mem:." username=""/>
-</Context>
