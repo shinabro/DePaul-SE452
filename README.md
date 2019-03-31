@@ -13,5 +13,3 @@ Tools used
 For Windows
 https://help.github.com/articles/set-up-git
 
-Eclipse eGit plugin help
-http://wiki.eclipse.org/EGit/Learning_Material
