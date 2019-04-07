@@ -1,0 +1,1 @@
+alter table flights add arrival_date_time timestamp;

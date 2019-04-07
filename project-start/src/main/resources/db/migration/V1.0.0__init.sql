@@ -1,8 +1,8 @@
-create table github_project (
+create table flights (
     id identity not null primary key,
-    org_name varchar(50) not null,
-    repo_name varchar(50) not null unique,
+    num varchar(10) not null,
+    departure_date_time timestamp default current_timestamp,
 );
 
-create index idx_repo_name
-    on github_project(repo_name);
+
+    
