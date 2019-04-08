@@ -21,12 +21,18 @@ public class FlightRespositoryTest {
 
     @Test
     public void testFindAll() {
-        int numOfRows = 0;
+        int numOfRows = repository.findAll().size();
         final int EXPECTED_NUM_OF_ROWS = 3;
-        for (Flight flight : repository.findAll()) {
-            numOfRows++;
-        }
         Assert.assertEquals(numOfRows, EXPECTED_NUM_OF_ROWS);
+    }
+    
+    @Test
+    public void testAirport() {
+        final String CHICAGO = "Chicago, IL";
+        
+        Flight flight = repository.findByFlightNumber("AA1211").get(0);
+        String originationCityState = flight.getOriginationAirport().getCityState(); 
+        Assert.assertEquals(CHICAGO, originationCityState);
     }
 
     @Test

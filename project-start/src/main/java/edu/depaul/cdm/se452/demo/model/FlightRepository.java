@@ -8,4 +8,7 @@ import org.springframework.data.repository.CrudRepository;
  */
 public interface FlightRepository extends CrudRepository<Flight, Long> {
     List<Flight> findByFlightNumber(String flightNum); 
+    
+    @Override
+    List<Flight> findAll();
 }
