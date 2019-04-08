@@ -36,7 +36,7 @@ public class FlightRespositoryTest {
     }
 
     @Test
-    public void whenFindByName_thenReturnEmployee() {
+    public void testAdd() {
         // given
         final String FLIGHT_NUM = "SW998";
         Flight swFlight = new Flight();
@@ -51,5 +51,22 @@ public class FlightRespositoryTest {
         Assertions.assertThat(found.getFlightNumber())
                 .isEqualTo(swFlight.getFlightNumber());
     }
+    
+    @Test
+    public void testUpdate() {
+        // given
+        final String ORIGINAL_FLIGHT = "AA1213";
+        final String NEW_FLIGHT_NUM = "SW1213";
+        // when
+        Flight found = repository.findByFlightNumber(ORIGINAL_FLIGHT).get(0);
+        found.setFlightNumber(NEW_FLIGHT_NUM);
+        entityManager.persistAndFlush(found);
+
+        
+        // Should not find any from original flight number and find one in the new flight number
+        Assert.assertEquals(0, repository.findByFlightNumber(ORIGINAL_FLIGHT).size());
+        Assert.assertEquals(1, repository.findByFlightNumber(NEW_FLIGHT_NUM).size());
+
+    }    
 
 }
