@@ -10,12 +10,14 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 import javax.validation.constraints.Size;
 import lombok.Data;
 import lombok.ToString;
 
-@Entity
 @Data
+@Entity
+@Table(name = "airports")
 public class Airport implements Serializable {
 
     private static final long serialVersionUID = 2L;
@@ -38,5 +40,12 @@ public class Airport implements Serializable {
     )
     @ToString.Exclude
     private List<Flight> originationFlights;
-    
+ 
+    @OneToMany(
+            mappedBy = "destinationAirport",
+            cascade = CascadeType.ALL,
+            fetch = FetchType.LAZY
+    )
+    @ToString.Exclude
+    private List<Flight> arrivalFlights;
 }

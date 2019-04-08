@@ -12,9 +12,9 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import lombok.Data;
 
+@Data
 @Entity
 @Table(name = "flights")
-@Data
 public class Flight implements Serializable {
     private static final long serialVersionUID = 1L;
         
@@ -28,6 +28,10 @@ public class Flight implements Serializable {
     @ManyToOne
     @JoinColumn(name = "origination_airport", nullable = false)    
     private Airport originationAirport;
+
+    @ManyToOne
+    @JoinColumn(name = "destination_airport", nullable = false)    
+    private Airport destinationAirport;
 
     private Timestamp departureDateTime;
 

@@ -18,7 +18,7 @@ public class DemoApplication {
 	
 	private static final Logger log = LoggerFactory.getLogger(DemoApplication.class);
 
-	@Bean
+	//@Bean
 	public CommandLineRunner demo(FlightRepository repository) {
 		return (args) -> {
 			// fetch all customers
