@@ -23,6 +23,6 @@ public class AirportRepositoryTest {
         final String CHICAGO = "Chicago, IL";
         Airport ord = repository.findByCode(ORD);
         Assert.assertEquals(CHICAGO, ord.getCityState());
-        Assert.assertEquals(ord.getOriginationFlights().size(), 3);
+        Assert.assertEquals(3, ord.getOriginationFlights().size());
     }
 }
