@@ -33,6 +33,8 @@ public class Flight implements Serializable {
     @JoinColumn(name = "destination_airport", nullable = false)    
     private Airport destinationAirport;
 
+    
+    @Column(name="departure_dt")
     private Timestamp departureDateTime;
 
     private Timestamp arrivalDateTime;
