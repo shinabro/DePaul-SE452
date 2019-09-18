@@ -18,6 +18,7 @@ import lombok.ToString;
 @Data
 @Entity
 @Table(name = "airports")
+@ToString
 public class Airport implements Serializable {
 
     private static final long serialVersionUID = 2L;

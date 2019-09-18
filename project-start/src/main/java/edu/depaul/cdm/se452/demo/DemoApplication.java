@@ -26,7 +26,7 @@ public class DemoApplication {
             repository.findAll().forEach((flight) -> {
                 log.info(flight.toString());
             });
-            log.info("");
+            log.info("-------------------------------");
         };
     }
 
