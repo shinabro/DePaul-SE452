@@ -1,5 +1,8 @@
-create table github_project (
-    github_id identity ,
-    org_name varchar(50) not null,
-    repo_name varchar(50) not null
+create table flights (
+    id int primary key auto_increment,
+    num varchar(10),
+    departure_dt timestamp default current_timestamp
 );
+
+
+    
