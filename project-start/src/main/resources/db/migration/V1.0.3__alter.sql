@@ -1,8 +1,11 @@
 alter table flights add origination_airport  long;
 alter table flights add destination_airport  long;
+--alter table flights add origination_airport  bigint;
+--alter table flights add destination_airport  bigint;
 
 create table airports (
     id int primary key auto_increment,
+--    id serial primary key,
     code varchar(5),
     city_st varchar(50)
 );
