@@ -1,15 +1,12 @@
 package edu.depaul.cdm.se452.demo.model;
 
-import org.assertj.core.api.Assertions;
-import org.junit.Assert;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
-import org.springframework.test.context.junit4.SpringRunner;
 
-@RunWith(SpringRunner.class)
 @DataJpaTest
 public class FlightRespositoryTest {
 
@@ -23,7 +20,7 @@ public class FlightRespositoryTest {
     public void testFindAll() {
         int numOfRows = repository.findAll().size();
         final int EXPECTED_NUM_OF_ROWS = 3;
-        Assert.assertEquals(numOfRows, EXPECTED_NUM_OF_ROWS);
+        assertEquals(numOfRows, EXPECTED_NUM_OF_ROWS);
     }
     
     @Test
@@ -32,7 +29,7 @@ public class FlightRespositoryTest {
         
         Flight flight = repository.findByFlightNumber("AA1211").get(0);
         String originationCityState = flight.getOriginationAirport().getCityState(); 
-        Assert.assertEquals(CHICAGO, originationCityState);
+        assertEquals(CHICAGO, originationCityState);
     }
 
     @Test
@@ -48,8 +45,7 @@ public class FlightRespositoryTest {
         Flight found = repository.findByFlightNumber(FLIGHT_NUM).get(0);
 
         // then
-        Assertions.assertThat(found.getFlightNumber())
-                .isEqualTo(swFlight.getFlightNumber());
+        assertEquals(found.getFlightNumber(), swFlight.getFlightNumber());
     }
     
     @Test
@@ -64,8 +60,8 @@ public class FlightRespositoryTest {
 
         
         // Should not find any from original flight number and find one in the new flight number
-        Assert.assertEquals(0, repository.findByFlightNumber(ORIGINAL_FLIGHT).size());
-        Assert.assertEquals(1, repository.findByFlightNumber(NEW_FLIGHT_NUM).size());
+        assertEquals(0, repository.findByFlightNumber(ORIGINAL_FLIGHT).size());
+        assertEquals(1, repository.findByFlightNumber(NEW_FLIGHT_NUM).size());
 
     }    
 
