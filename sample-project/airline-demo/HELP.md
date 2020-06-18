@@ -23,5 +23,27 @@ Base for Spring Boot
 #Editor
 * [VSCode](https://code.visualstudio.com/)
 While not the best Java development experience, this seems to have best integration with WSL.
+* [WSL2] (https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl)
+* [JavaIDEPack] (https://marketplace.visualstudio.com/items?itemName=pverest.java-ide-pack)
+* [SQLextension] (https://marketplace.visualstudio.com/items?itemName=mtxr.sqltools)
+Be sure to install it on WSL and not local
 
-###
+#Postsgres
+* [Postgres](https://www.postgresql.org/)
+* [Helpful] (https://itsfoss.com/install-postgresql-ubuntu/)
+
+* installation instructions
+https://www.postgresql.org/download/linux/ubuntu/
+
+* check status
+service postgresql status
+* start database
+sudo service postgresql start
+* stop database
+sudo service postgresql stop
+
+* create the database using
+create database [dbname]
+\c [dbname]
+
+
