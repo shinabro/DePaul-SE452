@@ -20,12 +20,12 @@ Using JDK 11 since it is long term support and as such would not change as frequ
 * [Gradle](https://gradle.org/)
 Base for Spring Boot
 
-#Editor
+#Editor - While not the best Java development experience, this seems to have best integration with WSL.
 * [VSCode](https://code.visualstudio.com/)
-While not the best Java development experience, this seems to have best integration with WSL.
 * [WSL2] (https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl)
 * [JavaIDEPack] (https://marketplace.visualstudio.com/items?itemName=pverest.java-ide-pack)
 * [SQLextension] (https://marketplace.visualstudio.com/items?itemName=mtxr.sqltools)
+* [Lombok] (https://marketplace.visualstudio.com/items?itemName=GabrielBB.vscode-lombok)
 Be sure to install it on WSL and not local
 
 #Postsgres
