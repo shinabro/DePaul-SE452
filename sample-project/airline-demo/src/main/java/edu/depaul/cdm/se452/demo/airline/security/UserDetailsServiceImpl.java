@@ -1,4 +1,4 @@
-package edu.depaul.cdm.se452.demo.airlinedemo.security;
+package edu.depaul.cdm.se452.demo.airline.security;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -1,5 +1,5 @@
 
-package edu.depaul.cdm.se452.demo.airlinedemo.security;
+package edu.depaul.cdm.se452.demo.airline.security;
 
 import java.io.IOException;
 import javax.servlet.ServletException;

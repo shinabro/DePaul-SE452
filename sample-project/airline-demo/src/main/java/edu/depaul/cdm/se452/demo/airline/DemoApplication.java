@@ -1,4 +1,4 @@
-package edu.depaul.cdm.se452.demo.airlinedemo;
+package edu.depaul.cdm.se452.demo.airline;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;

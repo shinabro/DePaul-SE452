@@ -1,4 +1,4 @@
-package edu.depaul.cdm.se452.demo.airlinedemo.passenger;
+package edu.depaul.cdm.se452.demo.airline.passenger;
 
 import javax.validation.Valid;
 

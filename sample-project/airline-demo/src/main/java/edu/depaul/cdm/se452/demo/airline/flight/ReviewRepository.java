@@ -1,4 +1,4 @@
-package edu.depaul.cdm.se452.demo.airlinedemo.flight;
+package edu.depaul.cdm.se452.demo.airline.flight;
 
 import org.springframework.data.repository.CrudRepository;
 

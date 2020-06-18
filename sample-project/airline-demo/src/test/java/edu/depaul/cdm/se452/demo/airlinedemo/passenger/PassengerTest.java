@@ -13,6 +13,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.TestPropertySource;
 
+import edu.depaul.cdm.se452.demo.airline.passenger.Passenger;
+
 @SpringBootTest
 @TestPropertySource(locations="classpath:application-test.properties")
 public class PassengerTest {

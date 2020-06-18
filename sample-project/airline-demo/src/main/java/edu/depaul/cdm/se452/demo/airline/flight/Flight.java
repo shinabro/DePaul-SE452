@@ -1,4 +1,4 @@
-package edu.depaul.cdm.se452.demo.airlinedemo.flight;
+package edu.depaul.cdm.se452.demo.airline.flight;
 
 import java.io.Serializable;
 import java.util.HashMap;
@@ -21,7 +21,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.vladmihalcea.hibernate.type.basic.PostgreSQLHStoreType;
 import org.springframework.format.annotation.DateTimeFormat;
 
-import edu.depaul.cdm.se452.demo.airlinedemo.airport.Airport;
+import edu.depaul.cdm.se452.demo.airline.airport.Airport;
 
 
 @Data

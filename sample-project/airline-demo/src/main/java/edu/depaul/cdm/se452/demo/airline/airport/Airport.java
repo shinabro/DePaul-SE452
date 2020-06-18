@@ -1,4 +1,4 @@
-package edu.depaul.cdm.se452.demo.airlinedemo.airport;
+package edu.depaul.cdm.se452.demo.airline.airport;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.io.Serializable;
@@ -19,7 +19,7 @@ import org.hibernate.annotations.Type;
 import org.hibernate.annotations.TypeDef;
 import org.hibernate.annotations.TypeDefs;
 
-import edu.depaul.cdm.se452.demo.airlinedemo.flight.Flight;
+import edu.depaul.cdm.se452.demo.airline.flight.Flight;
 
 import com.vladmihalcea.hibernate.type.json.JsonBinaryType;
 
