@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "sample-project"
+		},
+		{
+			"path": "concepts"
+		}
+	],
+	"settings": {
+		"java.configuration.updateBuildConfiguration": "automatic"
+	}
+}
