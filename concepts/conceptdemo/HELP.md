@@ -10,20 +10,23 @@ Demo of concept specific points for [DePaul-SE 452](https://www.cdm.depaul.edu/a
 | *[Terminal](https://www.microsoft.com/en-us/p/windows-terminal/9n0dx20hk701) | Real Terminal for Windows 
 | [SDKMan](https://sdkman.io/) | Simplifies switching between JDKs and SDKs | sdk install java 11.0.7-open 
 | [Docker](https://www.docker.com/products/docker-desktop) | Containerization to ease database setup
-| **[VS Code](https://code.visualstudio.com) | Code Editor  
+| [VS Code](https://code.visualstudio.com) | Code Editor  
 
 *needed for Windows only
 **<i>Be sure to install it on WSL</I> if using WSL
 
 ### VSCode extensions
- <li>Java IDE Pack</li>
- <li>Lombok Annotation Support</li>
- <li>PostgreSQL Explorer</li>
- <li>MongoDB for VS Code</li>
+| Extension | Used for 
+| ----------- | ----------- 
+| [Remote Development](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack) | To work with WSL
+| [Java IDE Pack](https://marketplace.visualstudio.com/items?itemName=pverest.java-ide-pack) | To work with Java
+| [Lombok Annotation Support](https://marketplace.visualstudio.com/items?itemName=GabrielBB.vscode-lombok) | Lombok support
+| [PostgresSQL Explorer](https://marketplace.visualstudio.com/items?itemName=ckolkman.vscode-postgres) | Client for Postgres
+| [MongoDB](https://marketplace.visualstudio.com/items?itemName=mongodb.mongodb-vscode) | Client for Mongo
 
 ### Docker commands
-<li>docker run --name demo_postgres -p5432:5432 -e PGDATA=/var/lib/postgresql/data/pgdata -v /home/kyu/sandbox/postgres -e POSTGRES_PASSWORD=password -d postgres</li>
-<li>docker exec -it demo_postgres sql -Upostgres<p>create database se452db;
-<li>docker run --name demo_mongo -p27017:27017 -v /home/kyu/sandbox/mongo:/var/lib/postgresql/data -d mongo</li> 
+<li>start: docker-compose up -d
+<li>stop: docker-compse down
+<li>docker exec -it demo-postgres psql -Upostgres<p>create database se452db;
 
  
