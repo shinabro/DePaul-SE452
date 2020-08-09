@@ -1,0 +1,42 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+    <head th:replace="/fragments/header :: common-header">    
+    </head>
+
+    <body>
+        <div th:replace="/fragments/header :: header"></div>
+        <!--        
+                <div class="col-md-6">
+                    <a class="btn btn-success" href="#" th:href="@{/flights/create}"> Add Flights </a>
+                    <a class="btn btn-primary" href="#" th:href="@{/flights/edit}" th:classappend="${flights.empty} ? 'disabled' : ''"> Edit Flights </a>
+                </div>
+        -->
+        <div>
+            <h2 th:text="${arrivalsOnly} ? 'Arrival': 'Departure'" scope="col"></h2>
+        </div>
+        <div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col"> Flight </th>
+                        <th scope="col"> Date Time </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:if="${flights.empty}">
+                        <td colspan="2"> No Flights Available </td>
+                    </tr>
+                    <tr scope="row" th:each="flight : ${flights}">
+                        <td th:text="${flight.flightNumber}"></td>
+                        
+                        <td th:if="${arrivalsOnly}" th:text="${#temporals.format(flight.arrivalDateTime, 'dd-MM-yyyy HH:mm')}"></td>
+                        <td th:if="${leavingOnly}" th:text="${#temporals.format(flight.departureDateTime, 'dd-MM-yyyy HH:mm')}"></td>
+                    </tr>
+                </tbody>
+            </table>            
+        </div>   
+        <div th:replace="/fragments/footer :: footer"></div>        
+    </body>
+</html>
+

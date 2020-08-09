@@ -1,0 +1,15 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="/fragments/header :: common-header">Index 
+    </head>
+    <body>
+        <div layout:fragment="content" th:remove="tag">
+            <h1>DePaul SE352/452 Demo</h1>
+            <p>This is an unsecured page, but you can access the secured pages after authenticating.</p>
+            <ol>
+                <li><a href="/airport" th:href="@{/airport}">Secured Project Demo</a></li>
+            </ol>       
+        </div>
+        <div th:replace="/fragments/footer :: footer"></div>   
+    </body>
+</html>
