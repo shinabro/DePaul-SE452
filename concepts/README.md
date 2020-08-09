@@ -27,6 +27,6 @@ Demo of concept specific points for [DePaul-SE 452](https://www.cdm.depaul.edu/a
 ### Docker commands
 <li>start: docker-compose up -d
 <li>stop: docker-compose down
-<li><i>Need to create database first time</i>docker exec -it demo-postgres psql -Upostgres<p>create database se452db;
+<li><i>Need to create database first time</i> docker exec -it demo-postgres psql -Upostgres<p>create database se452db;
 
  
