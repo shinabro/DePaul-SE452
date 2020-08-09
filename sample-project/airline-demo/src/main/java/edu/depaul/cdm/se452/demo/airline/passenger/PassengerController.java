@@ -33,10 +33,10 @@ public class PassengerController {
     public String checkIncludedForm(@Valid Passenger passenger, BindingResult bindingResult) {
 
         if (bindingResult.hasErrors()) {
-            return "passegenger/include-passenger-form";
+            return "passenger/include-passenger-form";
         }
 
-        return "redirect:/passegenger/results";
+        return "redirect:/passenger/results";
     }
 
     
