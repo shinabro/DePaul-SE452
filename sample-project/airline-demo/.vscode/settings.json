@@ -1,0 +1,16 @@
+{
+    "java.configuration.updateBuildConfiguration": "automatic",
+    "sqltools.connections": [
+        {
+            "askForPassword": false,
+            "database": "se452db",
+            "driver": "PostgreSQL",
+            "name": "localdb",
+            "password": "password",
+            "port": 5432,
+            "previewLimit": 50,
+            "server": "localhost",
+            "username": "postgres"
+        }
+    ]
+}
