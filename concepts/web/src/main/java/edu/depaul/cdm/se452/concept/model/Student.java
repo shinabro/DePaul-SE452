@@ -1,6 +1,7 @@
 package edu.depaul.cdm.se452.concept.model;
 
 import java.sql.Date;
+import java.time.LocalDate;
 import java.util.UUID;
 
 import javax.persistence.Column;
@@ -12,8 +13,10 @@ import javax.persistence.Table;
 import org.hibernate.annotations.GenericGenerator;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
+@NoArgsConstructor
 @Entity
 @Table(name = "students")
 public class Student {
@@ -30,5 +33,5 @@ public class Student {
 
 	private String email;
 
-	private Date admittedDate;
+	private Date admittedDate = Date.valueOf(LocalDate.now());
 }

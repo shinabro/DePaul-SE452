@@ -2,30 +2,30 @@ package edu.depaul.cdm.se452.concept.model;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.StringTokenizer;
+import java.util.UUID;
+import java.util.stream.Stream;
 
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Service;
 
 @Service
-@ConditionalOnProperty(
-  name = "datasource", 
-  havingValue = "mock")
+@ConditionalOnProperty(name = "datasource", havingValue = "mock")
 public class MockStudentService implements IStudentService {
     private static List<Student> STUDENTS = new ArrayList<Student>();
 
     static {
-        Student student = new Student();
-        student.setName("Sheena Wyre");
-        student.setEmail("swyre0@un.org");
-        student.setStudentId("MOCK1");
-        STUDENTS.add(student);
+        Stream.of("Sheena Wyre", "Dilly Caffery", "Marysa Alyonov", "Julie Venturoli", "SFrieda Liddiatt")
+                .forEach(name -> {
+                    Student student = new Student();
+                    student.setName(name);
+                    StringTokenizer tokenizer = new StringTokenizer(name, " ");
+                    student.setId(UUID.randomUUID());
+                    student.setStudentId(tokenizer.nextToken().toUpperCase());
+                    student.setEmail(tokenizer.nextToken().toLowerCase() + "@mockup.com");
+                    STUDENTS.add(student);
 
-        student = new Student();
-        student.setName("Dilly Caffery");
-        student.setEmail("dcaffery1@blogspot.com");
-        student.setStudentId("MOCK2");
-        STUDENTS.add(student);
-
+                });
     }
 
     @Override
@@ -33,13 +33,35 @@ public class MockStudentService implements IStudentService {
         return STUDENTS;
     }
 
-    public Student add(Student student) {
-        STUDENTS.add(student);
+    @Override
+    public Student update(Student student) {
+
+        if (student.getId() == null) {
+            student.setId(UUID.randomUUID());
+            student.setStudentId(student.getName().toLowerCase().substring(0,6)+'1');
+            STUDENTS.add(student);
+        } else {
+            Student originalStudent = findById(student.getId().toString());
+            STUDENTS.remove(originalStudent);
+            STUDENTS.add(student);
+        }
+
+
         return student;
     }
 
+    @Override
     public Student findById(String studentId) {
-        for (Student student : STUDENTS  ) {
+        for (Student student : STUDENTS) {
+            if (student.getId().toString().equals(studentId)) {
+                return student;
+            }
+        }
+        return null;
+    }
+
+    public Student findByStudentId(String studentId) {
+        for (Student student : STUDENTS) {
             if (student.getStudentId().equalsIgnoreCase(studentId)) {
                 return student;
             }
@@ -47,9 +69,9 @@ public class MockStudentService implements IStudentService {
         return null;
     }
 
+    @Override
     public void deleteById(String studentId) {
         STUDENTS.remove(findById(studentId));
     }
 
-    
 }

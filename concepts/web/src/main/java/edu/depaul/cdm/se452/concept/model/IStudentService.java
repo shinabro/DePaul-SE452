@@ -4,9 +4,12 @@ import java.util.List;
 
 public interface IStudentService {
     public List<Student> findAll();
-    public Student add(Student student);
+    public Student update(Student student);
   
     public Student findById(String studentId);
 
+    public Student findByStudentId(String studentId);
+    
     public void deleteById(String studentId);
+
 }

@@ -1,6 +1,7 @@
 package edu.depaul.cdm.se452.concept.model;
 
 import java.util.List;
+import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
@@ -19,22 +20,23 @@ public class StudentService implements IStudentService {
   }
 
   @Override
-  public Student add(Student student) {
+  public Student update(Student student) {
     repository.save(student);
     return student;
   }
 
   @Override
-  public Student findById(String studentId) {
+  public Student findById(String id) {
+    return repository.findById(UUID.fromString(id)).get();
+  }
+
+  public Student findByStudentId(String studentId) {
     return repository.findByStudentId(studentId).get(0);
   }
 
   @Override
-  public void deleteById(String studentId) {
-    List<Student> students = repository.findByStudentId(studentId);
-    for (Student student : students) {
-      repository.delete(student);
-    }
+  public void deleteById(String id) {
+    repository.deleteById(UUID.fromString(id));
   }
 
 }

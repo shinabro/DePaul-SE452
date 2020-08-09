@@ -13,32 +13,18 @@ import org.springframework.context.annotation.Bean;
  */
 @SpringBootApplication
 public class Main {
-    @Value( "${app.greeting}" )
-    private String greeting;
-  
-    @Autowired
-    private ApplicationContext applicationContext;
+    @Value( "${spring.profiles.active}" )
+    private String env;
 
     @Bean
     public CommandLineRunner showMessage() {
       return (args) -> {
-        System.out.println("begin encoded");
-        System.out.println(greeting);
-              System.out.println("end encoded");
+        System.out.println(env);
       };
     }    
     public static void main(String[] args) {
         SpringApplication.run(Main.class, args);
     }
 
-    @Bean
-    public CommandLineRunner showBeans() {
-      return (args) -> {
-        String[] beans = applicationContext.getBeanDefinitionNames();
-        for (String bean : beans) {
-            System.out.println(bean);
-        }
-      };
-    }        
 
 }

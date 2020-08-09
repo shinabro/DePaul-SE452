@@ -7,13 +7,13 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class GreetingController {
-    @Value( "${app.greeting}" )
+    @Value( "${spring.profiles.active}" )
     private String greeting;
 
-    @GetMapping("/")
+    @GetMapping("/greeting")
     public ModelAndView showGreeting() {
         ModelAndView mv = new ModelAndView("greeting");
-        mv.addObject("name", greeting);
+        mv.addObject("name", "Hello SE352/452 from " + greeting);
         return mv;
     }
 
