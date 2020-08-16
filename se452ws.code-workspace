@@ -1,10 +1,13 @@
 {
 	"folders": [
 		{
-			"path": "sample-project"
+			"path": "concepts"
 		},
 		{
-			"path": "concepts"
+			"path": "airline-project"
+		},
+		{
+			"path": "database"
 		}
 	],
 	"settings": {

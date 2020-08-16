@@ -10,7 +10,7 @@ public class GreetingController {
     @Value( "${spring.profiles.active}" )
     private String greeting;
 
-    @GetMapping("/greeting")
+    @GetMapping("/")
     public ModelAndView showGreeting() {
         ModelAndView mv = new ModelAndView("greeting");
         mv.addObject("name", "Hello SE352/452 from " + greeting);

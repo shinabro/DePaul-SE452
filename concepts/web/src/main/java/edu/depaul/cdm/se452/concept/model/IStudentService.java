@@ -11,5 +11,4 @@ public interface IStudentService {
     public Student findByStudentId(String studentId);
     
     public void deleteById(String studentId);
-
 }

@@ -6,6 +6,7 @@
 
 ### vs code ###
 /.vscode/
+concepts/.vscode/launch.json
 
 ### STS ###
 .apt_generated
@@ -32,3 +33,5 @@
 
 ### Maven genereated ###
 /.mvn/
+
+se452ws.code-workspace

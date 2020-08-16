@@ -30,7 +30,7 @@ public class StudentRestController {
 
     @PostMapping
     public Student add(@RequestBody Student student) {
-      return studentService.add(student);
+      return studentService.update(student);
     }
   
     @GetMapping("/{id}")
