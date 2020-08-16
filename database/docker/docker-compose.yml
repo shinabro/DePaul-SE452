@@ -1,0 +1,24 @@
+#Be sure to change volumn location
+#start:   docker-compose up -d
+#stop:    docker-compse down
+
+version: '3.7'
+services:
+    sql:
+        container_name: demo-postgres
+        image: postgres
+        volumes: 
+            - "~/postgres/data:/var/lib/postgresql/data"
+        restart: always
+        ports:
+            - 5432:5432
+        environment:
+            POSTGRES_PASSWORD: password
+    nosql:
+        container_name: demo-mongo
+        image: mongo
+        volumes: 
+            - "~/mongo/data:/data/db"
+        restart: always
+        ports:
+            - 27017:27017
