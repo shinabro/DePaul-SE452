@@ -1,24 +1,17 @@
 package edu.depaul.cdm.se452.concept.controller;
 
-import java.sql.Date;
-import java.util.List;
-
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import edu.depaul.cdm.se452.concept.Utility;
 import edu.depaul.cdm.se452.concept.model.IStudentService;
 import edu.depaul.cdm.se452.concept.model.Student;
 
@@ -31,7 +24,7 @@ public class StudentController {
 
   @GetMapping
   public ModelAndView showStudents() {
-    ModelAndView mv = new ModelAndView("index");
+    ModelAndView mv = new ModelAndView("list-students");
     mv.addObject("students", studentService.findAll());
     return mv;
   }
