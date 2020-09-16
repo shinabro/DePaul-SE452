@@ -4,9 +4,8 @@ Tools used
 
 *** JDK 11 
 
-*** Spring Boot 2
+*** Spring Boot 
 
-*** Maven 3 (Be sure to run mvn install -Dmaven.test.skip=true from top level directory)
 
 
 
