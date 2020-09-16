@@ -7,5 +7,5 @@ import org.springframework.data.repository.CrudRepository;
 /**
  * @see https://docs.spring.io/spring-data/commons/docs/current/api/org/springframework/data/repository/CrudRepository.html
  */
-public interface StudentRepository extends CrudRepository<Student, UUID>  {
+public interface StudentRepository extends CrudRepository<Student, Long>  {
 }

@@ -21,7 +21,7 @@ import lombok.ToString;
 public class Course {
     @Id
     @GeneratedValue
-    private UUID id;
+    private long id;
     
     private String dept;    
 

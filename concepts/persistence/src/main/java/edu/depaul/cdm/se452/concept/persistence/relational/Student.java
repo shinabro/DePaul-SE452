@@ -18,7 +18,7 @@ import lombok.Data;
 public class Student {
 	@Id
 	@GeneratedValue
-	private UUID id;
+	private long id;
 	
 	@Column(name = "stu_id")
 	private String studentId;
