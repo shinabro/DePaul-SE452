@@ -1,5 +1,7 @@
 package edu.depaul.cdm.se452.concept.persistence.relational;
 
+import java.util.Optional;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
@@ -54,4 +56,21 @@ public class Main {
       log.info("After James: " + repository.count());
     };
   }
+
+  @Bean
+  public CommandLineRunner updateStudent(StudentRepository repository) {
+    return (args) -> {
+      // fetch all Course
+      Optional<Student> stu = repository.findById((long) 1);
+      Student updateStudent = stu.orElse(new Student());
+      updateStudent.setName("updated " + updateStudent.getName());
+
+      log.info(stu.toString());
+
+      // Student student = new Student();
+      repository.save(updateStudent);
+      log.info("After James: " + repository.count());
+    };
+  }
+
 }
