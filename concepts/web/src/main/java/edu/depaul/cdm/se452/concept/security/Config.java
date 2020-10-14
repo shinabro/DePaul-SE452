@@ -1,5 +1,6 @@
 package edu.depaul.cdm.se452.concept.security;
 
+/*
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -14,8 +15,9 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
 @EnableWebSecurity
-public class Config extends WebSecurityConfigurerAdapter implements WebMvcConfigurer {
-
+*/
+public class Config /*extends WebSecurityConfigurerAdapter implements WebMvcConfigurer */{
+/*
 	public void addViewControllers(ViewControllerRegistry registry) {
 		registry.addViewController("/login").setViewName("login");
     }    
@@ -47,5 +49,5 @@ public class Config extends WebSecurityConfigurerAdapter implements WebMvcConfig
 
 		return new InMemoryUserDetailsManager(user);
     }
-
+*/
 }
