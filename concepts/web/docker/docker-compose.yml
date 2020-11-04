@@ -1,0 +1,14 @@
+#Be sure to change volumn location
+#start:   docker-compose up -d
+#stop:    docker-compse down
+
+version: '3.7'
+services:
+    web:
+        container_name: demo-tomcat
+        image: tomcat
+        volumes: 
+            - "../build/libs/web-0.0.1-SNAPSHOT.war:/usr/local/tomcat/webapps/webconcept.war"
+        restart: always
+        ports:
+            - 8080:8080
