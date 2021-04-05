@@ -1,9 +1,7 @@
 package edu.depaul.cdm.se452.concept.validation;
 
 import java.sql.Date;
-
 import javax.validation.constraints.Email;
-
 import lombok.Data;
 
 @Data
