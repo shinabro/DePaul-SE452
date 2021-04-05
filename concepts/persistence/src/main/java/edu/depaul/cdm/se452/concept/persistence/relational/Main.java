@@ -11,11 +11,11 @@ import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
 public class Main {
+  private static final Logger log = LoggerFactory.getLogger(Main.class);
+  
   public static void main(String[] args) {
     SpringApplication.run(Main.class, args);
-  }
-
-  private static final Logger log = LoggerFactory.getLogger(Main.class);
+  }  
 
   @Bean
   public CommandLineRunner showStudents(StudentRepository repository) {
@@ -36,10 +36,10 @@ public class Main {
       // fetch all Course
       log.info("Course found with findAll():");
       log.info("-------------------------------");
-      repository.findAll().forEach((course) -> {
+      for (Course course : repository.findAll()) {
         log.info(course.toString());
-        // log.info("Students in course: " + course.getStudents().size());
-      });
+      }
+
       log.info("-------------------------------");
     };
   }

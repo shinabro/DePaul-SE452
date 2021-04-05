@@ -1,7 +1,5 @@
 package edu.depaul.cdm.se452.concept.persistence.relational;
 
-import java.util.UUID;
-
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
