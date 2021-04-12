@@ -16,7 +16,8 @@ CREATE TABLE students (
 CREATE TABLE course (
     id serial  PRIMARY KEY,
     dept char(2),
-    num int
+    num int,
+    reviews json
 );
 
 CREATE TABLE course_students (

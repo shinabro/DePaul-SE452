@@ -21,7 +21,7 @@ Demo of concept specific points for [DePaul-SE 452](https://www.cdm.depaul.edu/a
 | [Remote Development](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack) | To work with WSL
 | [Java IDE Pack](https://marketplace.visualstudio.com/items?itemName=pverest.java-ide-pack) | To work with Java
 | [Lombok Annotation Support](https://marketplace.visualstudio.com/items?itemName=GabrielBB.vscode-lombok) | Lombok support
-| [PostgresSQL Explorer](https://marketplace.visualstudio.com/items?itemName=ckolkman.vscode-postgres) | Client for Postgres
+| [PostgreSQL Explorer](https://marketplace.visualstudio.com/items?itemName=ckolkman.vscode-postgres) | Client for Postgres
 | [MongoDB](https://marketplace.visualstudio.com/items?itemName=mongodb.mongodb-vscode) | Client for Mongo
 
 ### Docker commands

@@ -11,6 +11,19 @@
 		}
 	],
 	"settings": {
-		"java.configuration.updateBuildConfiguration": "automatic"
+		"java.configuration.updateBuildConfiguration": "automatic",
+		"sqltools.connections": [
+			{
+				"previewLimit": 50,
+				"server": "localhost",
+				"port": 5432,
+				"driver": "PostgreSQL",
+				"name": "localhost",
+				"group": "local",
+				"database": "se452db",
+				"username": "postgres",
+				"password": "password"
+			}
+		]
 	}
 }
