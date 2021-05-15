@@ -1,5 +1,7 @@
 package edu.depaul.cdm.se452.concept.persistence.relational;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 import org.slf4j.Logger;
@@ -20,6 +22,7 @@ public class Main {
   @Bean
   public CommandLineRunner showStudents(StudentRepository repository) {
     return (args) -> {
+      
       // fetch all Students
       log.info("Students found with findAll():");
       log.info("-------------------------------");

@@ -21,13 +21,13 @@ public class Main {
   public CommandLineRunner saveCourseReview(CourseReviewRepository repository) {
     return (args) -> {
       CourseReview review1 = new CourseReview();
-      review1.setCourse("SE452");
+      review1.setCourse("SE452a");
       review1.setReview("Hard");
       repository.save(review1);
 
       CourseReview review2 = new CourseReview();
-      review2.setCourse("SE252");
-      review2.setReview("Fun");
+      review2.setCourse("SE352");
+      review2.setReview("More Fun");
       repository.save(review2);      
     };
   }

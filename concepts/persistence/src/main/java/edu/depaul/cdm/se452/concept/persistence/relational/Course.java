@@ -9,6 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 import lombok.Data;
 import lombok.ToString;
@@ -18,6 +19,7 @@ import lombok.ToString;
  */
 @Data
 @Entity
+@Table(name="foo")
 public class Course {
     @Id
     @GeneratedValue
